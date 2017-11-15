@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,11 +44,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\LaptopService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\LaptopService\LaptopCrudService.wsdl" />
+    <None Include="Connected Services\LaptopService\LaptopCrudService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\LaptopService\LaptopCrudService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\LaptopService\LaptopCrudService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Models.Laptop.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
@@ -58,10 +75,27 @@
       <Project>{081aed85-5d07-41f4-946f-e5459afdff95}</Project>
       <Name>Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WCFServices\WCFServices.csproj">
-      <Project>{5ea1a2d9-5738-4bf1-ac45-48b3438a4ab6}</Project>
-      <Name>WCFServices</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\LaptopService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LaptopService\LaptopCrudService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LaptopService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LaptopService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\LaptopService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

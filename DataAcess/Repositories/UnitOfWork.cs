@@ -9,7 +9,7 @@ namespace Repositories
 
         private bool disposed = false;
 
-        private WebStoreContext context;
+        private WebStoreContext context = new WebStoreContext();
         private BaseRepository<Laptop> laptopRepo;
         private BaseRepository<PC> pcRepo;
 
