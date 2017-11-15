@@ -19,17 +19,17 @@ namespace BusinessServices
 
         public void Create(Laptop laptop)
         {
-            unit.LaptopRepo.Insert(laptop);
+            Unit.LaptopRepo.Insert(laptop);
         }
 
         public void Delete(Laptop laptop)
         {
-            unit.LaptopRepo.Delete(laptop);
+            Unit.LaptopRepo.Delete(laptop);
         }
 
         public void DeleteById(int id)
         {
-            unit.LaptopRepo.Delete(id);
+            Unit.LaptopRepo.Delete(id);
         }
 
         public List<Laptop> GetAll(
@@ -37,17 +37,17 @@ namespace BusinessServices
             Func<IQueryable<Laptop>, IOrderedQueryable<Laptop>> orderBy = null,
             string includeProperties = "", int take = 0)
         {
-            return unit.LaptopRepo.Get(filter, orderBy, includeProperties, take).ToList();
+            return Unit.LaptopRepo.Get(filter, orderBy, includeProperties, take).ToList();
         }
 
         public Laptop GetById(int id)
         {
-            return unit.LaptopRepo.GetByID(id);
+            return Unit.LaptopRepo.GetByID(id);
         }
 
-        public void Update(Laptop entity)
+        public void Update(Laptop laptop)
         {
-            throw new System.NotImplementedException();
+            Unit.LaptopRepo.Update(laptop);
         }
     }
 }
