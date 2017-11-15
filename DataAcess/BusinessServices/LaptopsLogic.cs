@@ -40,6 +40,11 @@ namespace BusinessServices
             return Unit.LaptopRepo.Get(filter, orderBy, includeProperties, take).ToList();
         }
 
+        public List<Laptop> GetAll()
+        {
+            return Unit.LaptopRepo.Get(null, null, String.Empty, 0).ToList();
+        }
+
         public Laptop GetById(int id)
         {
             return Unit.LaptopRepo.GetByID(id);

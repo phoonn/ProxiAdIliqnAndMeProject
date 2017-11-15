@@ -13,6 +13,8 @@ namespace Interfaces
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
             string includeProperties = "", int take = 0);
 
+        List<T> GetAll();
+
         T GetById(int id);
 
         void Create(T entity);

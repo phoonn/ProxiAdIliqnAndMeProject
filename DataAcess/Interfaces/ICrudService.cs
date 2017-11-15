@@ -8,26 +8,26 @@ using System.Text;
 namespace Interfaces
 // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
 {   [ServiceContract]
-    public interface ICrudService<T> where T :class, IEntity ,new()
+    public interface ICrudService<T>  where T: class,IEntity,new()
     {
         //Laptos
         [OperationContract]
-        IEnumerable<T> GetAllLaptops();
+        List<T> GetAllLaptops();
 
         [OperationContract]
         T GetLaptopById(int id);
 
-        [OperationContract]
-        bool DeleteLaptop(T entity);
+        [OperationContract(IsOneWay =true)]
+        void DeleteLaptop(T entity);
 
-        [OperationContract]
-        bool DeleteLaptopById(int id);
+        [OperationContract(IsOneWay = true)]
+        void DeleteLaptopById(int id);
 
-        [OperationContract]
-        bool CreateLaptop(T entity);
+        [OperationContract(IsOneWay = true)]
+        void CreateLaptop(T entity);
 
-        [OperationContract]
-        bool Update(T entity);
+        [OperationContract(IsOneWay = true)]
+        void Update(T entity);
         // TODO: Add your service operations here
     }
 }
