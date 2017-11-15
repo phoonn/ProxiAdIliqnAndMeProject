@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
 using System.Linq.Expressions;
+using Interfaces;
 
 namespace Repositories
 {
-    public class BaseRepository<TEntity> where TEntity : class
+    public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class,IEntity, new()
     {
         internal WebStoreContext context;
         internal DbSet<TEntity> Items;

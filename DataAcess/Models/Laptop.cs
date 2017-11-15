@@ -1,4 +1,4 @@
-﻿using Models.Interfaces;
+﻿using Interfaces;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Models

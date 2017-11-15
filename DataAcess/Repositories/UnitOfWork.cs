@@ -1,23 +1,28 @@
 ﻿using System;
 using Models;
+using Interfaces;
 
 namespace Repositories
 {
-    public class UnitOfWork : IDisposable
+    public class UnitOfWork : IDisposable , IUnitOfWork
     {
 
         private bool disposed = false;
 
-        private WebStoreContext context = new WebStoreContext();
+        private WebStoreContext context;
         private BaseRepository<Laptop> laptopRepo;
         private BaseRepository<PC> pcRepo;
 
+        public WebStoreContext Context
+        {
+            get { return this.context ?? new WebStoreContext(); }
+        }
 
         public BaseRepository<Laptop> LaptopRepo
         {
             get
             {
-                return this.laptopRepo ?? new BaseRepository<Laptop>(context);
+                return this.laptopRepo ?? new BaseRepository<Laptop>(Context);
             }
         }
 
@@ -25,7 +30,7 @@ namespace Repositories
         {
             get
             {
-                return this.pcRepo ?? new BaseRepository<PC>(context);
+                return this.pcRepo ?? new BaseRepository<PC>(Context);
             }
         }
 

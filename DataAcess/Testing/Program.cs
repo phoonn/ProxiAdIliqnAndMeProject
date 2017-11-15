@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Models.Interfaces
+namespace Testing
 {
-    public interface IEntity
+    class Program
     {
-        int Id { get; set; }
+        static void Main(string[] args)
+        {
+        }
     }
 }

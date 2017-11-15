@@ -1,5 +1,5 @@
-﻿using Models.Interfaces;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Interfaces;
 
 namespace Models
 {
