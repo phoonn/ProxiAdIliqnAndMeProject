@@ -217,6 +217,7 @@
     <Content Include="Views\Laptop\Details.cshtml" />
     <Content Include="Views\Laptop\Edit.cshtml" />
     <Content Include="Views\Laptop\Delete.cshtml" />
+    <Content Include="Views\Laptop\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
