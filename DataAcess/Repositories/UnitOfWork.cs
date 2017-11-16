@@ -9,20 +9,20 @@ namespace Repositories
 
         private bool disposed = false;
 
-        private WebStoreContext context = new WebStoreContext();
+        private WebStoreContext context;
         private BaseRepository<Laptop> laptopRepo;
         private BaseRepository<PC> pcRepo;
 
         public WebStoreContext Context
         {
-            get { return this.context ?? new WebStoreContext(); }
+            get { return this.context ?? (context = new WebStoreContext()); }
         }
 
         public BaseRepository<Laptop> LaptopRepo
         {
             get
             {
-                return this.laptopRepo ?? new BaseRepository<Laptop>(Context);
+                return this.laptopRepo ?? (laptopRepo =new BaseRepository<Laptop>(Context));
             }
         }
 
@@ -30,13 +30,13 @@ namespace Repositories
         {
             get
             {
-                return this.pcRepo ?? new BaseRepository<PC>(Context);
+                return this.pcRepo ?? (pcRepo =  new BaseRepository<PC>(Context));
             }
         }
 
         public void Save()
         {
-            context.SaveChanges();
+            Context.SaveChanges();
         }
 
         protected virtual void Dispose(bool disposing)
@@ -45,7 +45,7 @@ namespace Repositories
             {
                 if (disposing)
                 {
-                    context.Dispose();
+                    Context.Dispose();
                 }
             }
             this.disposed = true;

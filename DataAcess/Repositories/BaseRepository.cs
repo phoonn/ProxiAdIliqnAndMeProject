@@ -84,7 +84,10 @@ namespace Repositories
 
         public virtual void Update(TEntity entityToUpdate)
         {
-            Items.Attach(entityToUpdate);
+            if (context.Entry(entityToUpdate).State == EntityState.Detached)
+            {
+                Items.Attach(entityToUpdate);
+            }
             context.Entry(entityToUpdate).State = EntityState.Modified;
         }
     }

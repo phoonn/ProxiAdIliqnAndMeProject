@@ -14,22 +14,25 @@ namespace BusinessServices
 
         public UnitOfWork Unit
         {
-            get { return this.unit ?? new UnitOfWork(); }
+            get { return this.unit ?? (unit = new UnitOfWork()); }
         }
 
         public void Create(Laptop laptop)
         {
             Unit.LaptopRepo.Insert(laptop);
+            Unit.Save();
         }
 
         public void Delete(Laptop laptop)
         {
             Unit.LaptopRepo.Delete(laptop);
+            Unit.Save();
         }
 
         public void DeleteById(int id)
         {
             Unit.LaptopRepo.Delete(id);
+            Unit.Save();
         }
 
         public IEnumerable<Laptop> GetAll(
@@ -53,6 +56,7 @@ namespace BusinessServices
         public void Update(Laptop laptop)
         {
             Unit.LaptopRepo.Update(laptop);
+            Unit.Save();
         }
     }
 }

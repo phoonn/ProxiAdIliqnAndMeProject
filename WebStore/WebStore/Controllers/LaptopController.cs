@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WebStore.LaptopsCrudService;
@@ -13,8 +14,9 @@ namespace WebStore.Controllers
         private CrudServiceOf_LaptopClient client;
         // GET: Laptop
         [Route("Index")]
-        public ActionResult Index(Laptop[] laptops)
+        public ActionResult Index()
         {
+            Laptop[] laptops;
             using (client = new CrudServiceOf_LaptopClient())
             {
                 laptops = client.GetAllLaptops();
@@ -24,8 +26,9 @@ namespace WebStore.Controllers
 
         // GET: Laptop/Details/5
         [Route("Detalis/{int id}")]
-        public ActionResult Details(int id,Laptop laptop)
+        public ActionResult Details(int id)
         {
+            Laptop laptop;
             using (client = new CrudServiceOf_LaptopClient())
             {
                laptop = client.GetLaptopById(id);
@@ -55,8 +58,9 @@ namespace WebStore.Controllers
         }
 
         // GET: Laptop/Edit/5
-        public ActionResult Edit(int id,Laptop laptop)
+        public ActionResult Edit(int id)
         {
+            Laptop laptop;
             using (client = new CrudServiceOf_LaptopClient())
             {
                 laptop = client.GetLaptopById(id);
@@ -80,24 +84,35 @@ namespace WebStore.Controllers
             }
             catch
             {
-                return View();
+                return View(laptop);
             }
         }
 
         // GET: Laptop/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Laptop laptop;
+            using (client = new CrudServiceOf_LaptopClient())
+            {
+                laptop = client.GetLaptopById((int)id);
+            }
+            return View(laptop);
         }
 
-        // POST: Laptop/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmation(int id)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                using (client = new CrudServiceOf_LaptopClient())
+                {
+                    client.DeleteLaptopById(id);
+                }
                 return RedirectToAction("Index");
             }
             catch
