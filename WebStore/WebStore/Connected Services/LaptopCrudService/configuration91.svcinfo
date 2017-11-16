@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="SEyDcrFqMJS0QxUuzM3bmICYTU0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="8MzUDCf3uk38Z3iwTXEGsjxrIAI=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICrudServiceOf_Laptop">
       <properties>
@@ -112,7 +112,7 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ICrudServiceOf_Laptop" contract="LaptopsCrudService.ICrudServiceOf_Laptop" bindingType="basicHttpBinding" address="http://localhost:55762/LaptopCrudService.svc" bindingConfiguration="BasicHttpBinding_ICrudServiceOf_Laptop">
+    <endpoint name="BasicHttpBinding_ICrudServiceOf_Laptop" contract="LaptopCrudService.ICrudServiceOf_Laptop" bindingType="basicHttpBinding" address="http://localhost:55762/LaptopCrudService.svc" bindingConfiguration="BasicHttpBinding_ICrudServiceOf_Laptop">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>http://localhost:55762/LaptopCrudService.svc</serializedValue>
@@ -127,7 +127,7 @@
           <serializedValue>BasicHttpBinding_ICrudServiceOf_Laptop</serializedValue>
         </property>
         <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>LaptopsCrudService.ICrudServiceOf_Laptop</serializedValue>
+          <serializedValue>LaptopCrudService.ICrudServiceOf_Laptop</serializedValue>
         </property>
         <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebStore.LaptopsCrudService {
+namespace WebStore.LaptopCrudService {
     using System.Runtime.Serialization;
     using System;
     
@@ -203,26 +203,26 @@ namespace WebStore.LaptopsCrudService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LaptopsCrudService.ICrudServiceOf_Laptop")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LaptopCrudService.ICrudServiceOf_Laptop")]
     public interface ICrudServiceOf_Laptop {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptop/GetAllLaptops", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptop/GetAllLaptopsResponse")]
-        WebStore.LaptopsCrudService.Laptop[] GetAllLaptops();
+        WebStore.LaptopCrudService.Laptop[] GetAllLaptops();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptop/GetAllLaptops", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptop/GetAllLaptopsResponse")]
-        System.Threading.Tasks.Task<WebStore.LaptopsCrudService.Laptop[]> GetAllLaptopsAsync();
+        System.Threading.Tasks.Task<WebStore.LaptopCrudService.Laptop[]> GetAllLaptopsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptop/GetLaptopById", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptop/GetLaptopByIdResponse")]
-        WebStore.LaptopsCrudService.Laptop GetLaptopById(int id);
+        WebStore.LaptopCrudService.Laptop GetLaptopById(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptop/GetLaptopById", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptop/GetLaptopByIdResponse")]
-        System.Threading.Tasks.Task<WebStore.LaptopsCrudService.Laptop> GetLaptopByIdAsync(int id);
+        System.Threading.Tasks.Task<WebStore.LaptopCrudService.Laptop> GetLaptopByIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptop/DeleteLaptop", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptop/DeleteLaptopResponse")]
-        bool DeleteLaptop(WebStore.LaptopsCrudService.Laptop entity);
+        bool DeleteLaptop(WebStore.LaptopCrudService.Laptop entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptop/DeleteLaptop", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptop/DeleteLaptopResponse")]
-        System.Threading.Tasks.Task<bool> DeleteLaptopAsync(WebStore.LaptopsCrudService.Laptop entity);
+        System.Threading.Tasks.Task<bool> DeleteLaptopAsync(WebStore.LaptopCrudService.Laptop entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptop/DeleteLaptopById", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptop/DeleteLaptopByIdResponse")]
         bool DeleteLaptopById(int id);
@@ -231,25 +231,25 @@ namespace WebStore.LaptopsCrudService {
         System.Threading.Tasks.Task<bool> DeleteLaptopByIdAsync(int id);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptop/CreateLaptop", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptop/CreateLaptopResponse")]
-        bool CreateLaptop(WebStore.LaptopsCrudService.Laptop entity);
+        bool CreateLaptop(WebStore.LaptopCrudService.Laptop entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptop/CreateLaptop", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptop/CreateLaptopResponse")]
-        System.Threading.Tasks.Task<bool> CreateLaptopAsync(WebStore.LaptopsCrudService.Laptop entity);
+        System.Threading.Tasks.Task<bool> CreateLaptopAsync(WebStore.LaptopCrudService.Laptop entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptop/Update", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptop/UpdateResponse")]
-        bool Update(WebStore.LaptopsCrudService.Laptop entity);
+        bool Update(WebStore.LaptopCrudService.Laptop entity);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptop/Update", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptop/UpdateResponse")]
-        System.Threading.Tasks.Task<bool> UpdateAsync(WebStore.LaptopsCrudService.Laptop entity);
+        System.Threading.Tasks.Task<bool> UpdateAsync(WebStore.LaptopCrudService.Laptop entity);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICrudServiceOf_LaptopChannel : WebStore.LaptopsCrudService.ICrudServiceOf_Laptop, System.ServiceModel.IClientChannel {
+    public interface ICrudServiceOf_LaptopChannel : WebStore.LaptopCrudService.ICrudServiceOf_Laptop, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CrudServiceOf_LaptopClient : System.ServiceModel.ClientBase<WebStore.LaptopsCrudService.ICrudServiceOf_Laptop>, WebStore.LaptopsCrudService.ICrudServiceOf_Laptop {
+    public partial class CrudServiceOf_LaptopClient : System.ServiceModel.ClientBase<WebStore.LaptopCrudService.ICrudServiceOf_Laptop>, WebStore.LaptopCrudService.ICrudServiceOf_Laptop {
         
         public CrudServiceOf_LaptopClient() {
         }
@@ -270,27 +270,27 @@ namespace WebStore.LaptopsCrudService {
                 base(binding, remoteAddress) {
         }
         
-        public WebStore.LaptopsCrudService.Laptop[] GetAllLaptops() {
+        public WebStore.LaptopCrudService.Laptop[] GetAllLaptops() {
             return base.Channel.GetAllLaptops();
         }
         
-        public System.Threading.Tasks.Task<WebStore.LaptopsCrudService.Laptop[]> GetAllLaptopsAsync() {
+        public System.Threading.Tasks.Task<WebStore.LaptopCrudService.Laptop[]> GetAllLaptopsAsync() {
             return base.Channel.GetAllLaptopsAsync();
         }
         
-        public WebStore.LaptopsCrudService.Laptop GetLaptopById(int id) {
+        public WebStore.LaptopCrudService.Laptop GetLaptopById(int id) {
             return base.Channel.GetLaptopById(id);
         }
         
-        public System.Threading.Tasks.Task<WebStore.LaptopsCrudService.Laptop> GetLaptopByIdAsync(int id) {
+        public System.Threading.Tasks.Task<WebStore.LaptopCrudService.Laptop> GetLaptopByIdAsync(int id) {
             return base.Channel.GetLaptopByIdAsync(id);
         }
         
-        public bool DeleteLaptop(WebStore.LaptopsCrudService.Laptop entity) {
+        public bool DeleteLaptop(WebStore.LaptopCrudService.Laptop entity) {
             return base.Channel.DeleteLaptop(entity);
         }
         
-        public System.Threading.Tasks.Task<bool> DeleteLaptopAsync(WebStore.LaptopsCrudService.Laptop entity) {
+        public System.Threading.Tasks.Task<bool> DeleteLaptopAsync(WebStore.LaptopCrudService.Laptop entity) {
             return base.Channel.DeleteLaptopAsync(entity);
         }
         
@@ -302,19 +302,19 @@ namespace WebStore.LaptopsCrudService {
             return base.Channel.DeleteLaptopByIdAsync(id);
         }
         
-        public bool CreateLaptop(WebStore.LaptopsCrudService.Laptop entity) {
+        public bool CreateLaptop(WebStore.LaptopCrudService.Laptop entity) {
             return base.Channel.CreateLaptop(entity);
         }
         
-        public System.Threading.Tasks.Task<bool> CreateLaptopAsync(WebStore.LaptopsCrudService.Laptop entity) {
+        public System.Threading.Tasks.Task<bool> CreateLaptopAsync(WebStore.LaptopCrudService.Laptop entity) {
             return base.Channel.CreateLaptopAsync(entity);
         }
         
-        public bool Update(WebStore.LaptopsCrudService.Laptop entity) {
+        public bool Update(WebStore.LaptopCrudService.Laptop entity) {
             return base.Channel.Update(entity);
         }
         
-        public System.Threading.Tasks.Task<bool> UpdateAsync(WebStore.LaptopsCrudService.Laptop entity) {
+        public System.Threading.Tasks.Task<bool> UpdateAsync(WebStore.LaptopCrudService.Laptop entity) {
             return base.Channel.UpdateAsync(entity);
         }
     }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using WebStore.LaptopsCrudService;
+using WebStore.LaptopCrudService;
 
 namespace WebStore.Controllers
 {
@@ -31,7 +31,7 @@ namespace WebStore.Controllers
             Laptop laptop;
             using (client = new CrudServiceOf_LaptopClient())
             {
-               laptop = client.GetLaptopById(id);
+                laptop = client.GetLaptopById(id);
             }
             return View(model: laptop);
         }
