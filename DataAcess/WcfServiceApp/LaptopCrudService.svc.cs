@@ -20,7 +20,7 @@ namespace WcfServiceApp
         {
             get { return this.laptoplogic ?? new LaptopsLogic(); }
         }
-        public List<Laptop> GetAllLaptops()
+        public IEnumerable<Laptop> GetAllLaptops()
         {
             return LaptopLogic.GetAll();
         }

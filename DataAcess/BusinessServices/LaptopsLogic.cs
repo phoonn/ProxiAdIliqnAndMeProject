@@ -32,17 +32,17 @@ namespace BusinessServices
             Unit.LaptopRepo.Delete(id);
         }
 
-        public List<Laptop> GetAll(
+        public IEnumerable<Laptop> GetAll(
             Expression<Func<Laptop, bool>> filter = null,
             Func<IQueryable<Laptop>, IOrderedQueryable<Laptop>> orderBy = null,
             string includeProperties = "", int take = 0)
         {
-            return Unit.LaptopRepo.Get(filter, orderBy, includeProperties, take).ToList();
+            return Unit.LaptopRepo.Get(filter, orderBy, includeProperties, take);
         }
 
-        public List<Laptop> GetAll()
+        public IEnumerable<Laptop> GetAll()
         {
-            return Unit.LaptopRepo.Get(null, null, String.Empty, 0).ToList();
+            return Unit.LaptopRepo.Get(null, null, String.Empty, 0);
         }
 
         public Laptop GetById(int id)
