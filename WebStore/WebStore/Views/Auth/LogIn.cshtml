@@ -1,0 +1,18 @@
+﻿@model WebStore.Models.LogInModel
+
+<title>Login</title>
+<h2>Login</h2>
+<div class="body-content container">
+    @Html.ValidationSummary(true)
+
+    @using (Html.BeginForm())
+    {
+
+        @Html.EditorForModel()
+        <br />
+        <p><button type="submit" class="label">Login</button></p>
+
+        <p>You don't have an account? </p>
+        <p><a href="@Url.Action("Register", "Auth")">Register NOW !</a></p>
+    }
+</div>
