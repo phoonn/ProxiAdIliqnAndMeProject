@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d30a46fd-598d-4baa-bfe1-2fe14d5a0374" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55762/LaptopCrudService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LaptopCrudService.wsdl" MetadataType="Wsdl" ID="5089ab6d-2f3d-4d19-b912-fe3a897a5590" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?wsdl" />
+    <MetadataFile FileName="LaptopCrudService.xsd" MetadataType="Schema" ID="86210d5c-d0a5-4771-8c65-3bf668428e8b" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LaptopCrudService.disco" MetadataType="Disco" ID="8edf8f89-bd76-4349-af85-046d26ed03f2" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?disco" />
+    <MetadataFile FileName="LaptopCrudService1.xsd" MetadataType="Schema" ID="597c49a4-b73b-4a34-b076-8e6088979a3d" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LaptopCrudService2.xsd" MetadataType="Schema" ID="8770141e-6573-41da-85ed-299838330251" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
