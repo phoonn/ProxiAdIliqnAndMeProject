@@ -17,17 +17,17 @@ namespace Interfaces
         [OperationContract]
         T GetLaptopById(int id);
 
-        [OperationContract(IsOneWay =true)]
-        void DeleteLaptop(T entity);
+        [OperationContract]
+        bool DeleteLaptop(T entity);
 
-        [OperationContract(IsOneWay = true)]
-        void DeleteLaptopById(int id);
+        [OperationContract]
+        bool DeleteLaptopById(int id);
 
-        [OperationContract(IsOneWay = true)]
-        void CreateLaptop(T entity);
+        [OperationContract]
+        bool CreateLaptop(T entity);
 
-        [OperationContract(IsOneWay = true)]
-        void Update(T entity);
+        [OperationContract]
+        bool Update(T entity);
         // TODO: Add your service operations here
     }
 }

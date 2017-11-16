@@ -36,19 +36,23 @@ namespace WebStore.Controllers
             return View(model: laptop);
         }
 
-        // GET: Laptop/Create
+        //[Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Laptop/Create
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(Laptop laptop)
         {
             try
             {
-                
+                using (client = new CrudServiceOf_LaptopClient())
+                {
+                    bool isdone = client.CreateLaptop(laptop);
+                }
                 return RedirectToAction("Index");
             }
             catch
@@ -57,7 +61,7 @@ namespace WebStore.Controllers
             }
         }
 
-        // GET: Laptop/Edit/5
+        //[Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
             Laptop laptop;
@@ -68,7 +72,7 @@ namespace WebStore.Controllers
             return View(model: laptop);
         }
 
-        // POST: Laptop/Edit/5
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Laptop laptop)
@@ -77,7 +81,7 @@ namespace WebStore.Controllers
             {
                 using (client = new CrudServiceOf_LaptopClient())
                 {
-                    client.Update(laptop);
+                    bool isdone = client.Update(laptop);
                 }
 
                 return RedirectToAction("Index");
@@ -88,7 +92,7 @@ namespace WebStore.Controllers
             }
         }
 
-        // GET: Laptop/Delete/5
+        //[Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -103,6 +107,7 @@ namespace WebStore.Controllers
             return View(laptop);
         }
 
+        //[Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmation(int id)
@@ -111,7 +116,7 @@ namespace WebStore.Controllers
             {
                 using (client = new CrudServiceOf_LaptopClient())
                 {
-                    client.DeleteLaptopById(id);
+                    bool isdone = client.DeleteLaptopById(id);
                 }
                 return RedirectToAction("Index");
             }

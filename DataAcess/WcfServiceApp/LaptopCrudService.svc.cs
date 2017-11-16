@@ -30,24 +30,56 @@ namespace WcfServiceApp
             return LaptopLogic.GetById(id);
         }
 
-        public void DeleteLaptop(Laptop laptop)
+        public bool DeleteLaptop(Laptop laptop)
         {
-            LaptopLogic.Delete(laptop);
+            try
+            {
+                LaptopLogic.Delete(laptop);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
-        public void DeleteLaptopById(int id)
+        public bool DeleteLaptopById(int id)
         {
-            LaptopLogic.DeleteById(id);
+            try
+            {
+                LaptopLogic.DeleteById(id);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
-        public void CreateLaptop(Laptop laptop)
+        public bool CreateLaptop(Laptop laptop)
         {
-            LaptopLogic.Create(laptop);
+            try
+            {
+                LaptopLogic.Create(laptop);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
-        public void Update(Laptop laptop)
+        public bool Update(Laptop laptop)
         {
-            LaptopLogic.Update(laptop);
+            try
+            {
+                LaptopLogic.Update(laptop);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
