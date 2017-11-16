@@ -57,7 +57,7 @@ namespace WebStore.Controllers
             }
             catch
             {
-                return View();
+                return View("Error");
             }
         }
 
@@ -122,7 +122,7 @@ namespace WebStore.Controllers
             }
             catch
             {
-                return View();
+                return View("Error");
             }
         }
     }
