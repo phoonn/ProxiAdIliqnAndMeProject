@@ -9,11 +9,11 @@ namespace Interfaces
 {
     public interface ICrudLogic<T> where T : class, IEntity , new()
     {
-        List<T> GetAll(Expression<Func<T, bool>> filter = null,
+        IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
             string includeProperties = "", int take = 0);
 
-        List<T> GetAll();
+        IEnumerable<T> GetAll();
 
         T GetById(int id);
 

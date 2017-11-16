@@ -12,7 +12,7 @@ namespace Interfaces
     {
         //Laptos
         [OperationContract]
-        List<T> GetAllLaptops();
+        IEnumerable<T> GetAllLaptops();
 
         [OperationContract]
         T GetLaptopById(int id);

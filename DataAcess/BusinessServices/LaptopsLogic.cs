@@ -14,35 +14,38 @@ namespace BusinessServices
 
         public UnitOfWork Unit
         {
-            get { return this.unit ?? new UnitOfWork(); }
+            get { return this.unit ?? (unit = new UnitOfWork()); }
         }
 
         public void Create(Laptop laptop)
         {
             Unit.LaptopRepo.Insert(laptop);
+            Unit.Save();
         }
 
         public void Delete(Laptop laptop)
         {
             Unit.LaptopRepo.Delete(laptop);
+            Unit.Save();
         }
 
         public void DeleteById(int id)
         {
             Unit.LaptopRepo.Delete(id);
+            Unit.Save();
         }
 
-        public List<Laptop> GetAll(
+        public IEnumerable<Laptop> GetAll(
             Expression<Func<Laptop, bool>> filter = null,
             Func<IQueryable<Laptop>, IOrderedQueryable<Laptop>> orderBy = null,
             string includeProperties = "", int take = 0)
         {
-            return Unit.LaptopRepo.Get(filter, orderBy, includeProperties, take).ToList();
+            return Unit.LaptopRepo.Get(filter, orderBy, includeProperties, take);
         }
 
-        public List<Laptop> GetAll()
+        public IEnumerable<Laptop> GetAll()
         {
-            return Unit.LaptopRepo.Get(null, null, String.Empty, 0).ToList();
+            return Unit.LaptopRepo.Get(null, null, String.Empty, 0);
         }
 
         public Laptop GetById(int id)
@@ -53,6 +56,7 @@ namespace BusinessServices
         public void Update(Laptop laptop)
         {
             Unit.LaptopRepo.Update(laptop);
+            Unit.Save();
         }
     }
 }

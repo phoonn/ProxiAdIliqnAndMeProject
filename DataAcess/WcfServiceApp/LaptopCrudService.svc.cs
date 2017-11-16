@@ -18,9 +18,9 @@ namespace WcfServiceApp
 
         public LaptopsLogic LaptopLogic
         {
-            get { return this.laptoplogic ?? new LaptopsLogic(); }
+            get { return this.laptoplogic ?? (laptoplogic = new LaptopsLogic()); }
         }
-        public List<Laptop> GetAllLaptops()
+        public IEnumerable<Laptop> GetAllLaptops()
         {
             return LaptopLogic.GetAll();
         }
