@@ -8,55 +8,72 @@ using System.Linq;
 
 namespace BusinessServices
 {
-    public class LaptopsLogic : ICrudLogic<Laptop>
+    public class LaptopsLogic : ICrudLogic<Laptop> 
     {
-        private UnitOfWork unit;
-
-        public UnitOfWork Unit
-        {
-            get { return this.unit ?? (unit = new UnitOfWork()); }
-        }
-
+        private UnitOfWork Unit;
+        
         public void Create(Laptop laptop)
         {
-            Unit.LaptopRepo.Insert(laptop);
-            Unit.Save();
+            using (Unit = new UnitOfWork())
+            {
+                Unit.LaptopRepo.Insert(laptop);
+                Unit.Save();
+            }
         }
 
         public void Delete(Laptop laptop)
         {
-            Unit.LaptopRepo.Delete(laptop);
-            Unit.Save();
+            using (Unit = new UnitOfWork())
+            {
+                Unit.LaptopRepo.Delete(laptop);
+                Unit.Save();
+            }
         }
 
         public void DeleteById(int id)
         {
-            Unit.LaptopRepo.Delete(id);
-            Unit.Save();
+            using (Unit = new UnitOfWork())
+            {
+                Unit.LaptopRepo.Delete(id);
+                Unit.Save();
+            }
         }
-
+        
         public IEnumerable<Laptop> GetAll(
             Expression<Func<Laptop, bool>> filter = null,
             Func<IQueryable<Laptop>, IOrderedQueryable<Laptop>> orderBy = null,
             string includeProperties = "", int take = 0)
         {
-            return Unit.LaptopRepo.Get(filter, orderBy, includeProperties, take);
+            using (Unit = new UnitOfWork())
+            {
+                return Unit.LaptopRepo.Get(filter, orderBy, includeProperties, take);
+            }
         }
 
         public IEnumerable<Laptop> GetAll()
         {
-            return Unit.LaptopRepo.Get(null, null, String.Empty, 0);
+            using (Unit = new UnitOfWork())
+            {
+                return Unit.LaptopRepo.Get(null, null, String.Empty, 0);
+            }
         }
 
         public Laptop GetById(int id)
         {
-            return Unit.LaptopRepo.GetByID(id);
+            using (Unit = new UnitOfWork())
+            {
+                return Unit.LaptopRepo.GetByID(id);
+            }
         }
 
         public void Update(Laptop laptop)
         {
-            Unit.LaptopRepo.Update(laptop);
-            Unit.Save();
+            using (Unit = new UnitOfWork())
+            {
+                Unit.LaptopRepo.Update(laptop);
+                Unit.Save();
+            }
         }
+        
     }
 }
