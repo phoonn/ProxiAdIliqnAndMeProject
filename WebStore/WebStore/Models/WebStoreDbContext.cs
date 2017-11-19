@@ -9,7 +9,7 @@ namespace WebStore.Models
     public class WebStoreDbContext : IdentityDbContext<User>
     {
         public WebStoreDbContext()
-            : base("DefaultConnection")
+            : base("name=DefaultConnection")
         {
 #if DEBUG
             Database.Log = s => System.Diagnostics.Debug.WriteLine(s);

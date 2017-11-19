@@ -16,13 +16,7 @@ namespace BusinessServices
 
         private UnitOfWork Unit
         {
-            get {
-                if (unit == null || unit.Context == null)
-                {
-                    return (unit = new UnitOfWork());
-                }
-                else return unit;
-            }
+            get { return this.unit ?? ( unit = new UnitOfWork()); }
         }
         
         public void Create(Laptop laptop)
