@@ -8,72 +8,81 @@ using System.Linq;
 
 namespace BusinessServices
 {
-    public class LaptopsLogic : ICrudLogic<Laptop> 
+    public class LaptopsLogic : ICrudLogic<Laptop> , IDisposable
     {
-        private UnitOfWork Unit;
+        private UnitOfWork unit;
+
+        private bool disposed = false;
+
+        private UnitOfWork Unit
+        {
+            get {
+                if (unit == null || unit.Context == null)
+                {
+                    return (unit = new UnitOfWork());
+                }
+                else return unit;
+            }
+        }
         
         public void Create(Laptop laptop)
         {
-            using (Unit = new UnitOfWork())
-            {
-                Unit.LaptopRepo.Insert(laptop);
-                Unit.Save();
-            }
+            Unit.LaptopRepo.Insert(laptop);
+            Unit.Save();
         }
 
         public void Delete(Laptop laptop)
         {
-            using (Unit = new UnitOfWork())
-            {
-                Unit.LaptopRepo.Delete(laptop);
-                Unit.Save();
-            }
+            Unit.LaptopRepo.Delete(laptop);
+            Unit.Save();
         }
 
         public void DeleteById(int id)
         {
-            using (Unit = new UnitOfWork())
-            {
-                Unit.LaptopRepo.Delete(id);
-                Unit.Save();
-            }
+            Unit.LaptopRepo.Delete(id);
+            Unit.Save();
         }
-        
+
         public IEnumerable<Laptop> GetAll(
             Expression<Func<Laptop, bool>> filter = null,
             Func<IQueryable<Laptop>, IOrderedQueryable<Laptop>> orderBy = null,
             string includeProperties = "", int take = 0)
         {
-            using (Unit = new UnitOfWork())
-            {
-                return Unit.LaptopRepo.Get(filter, orderBy, includeProperties, take);
-            }
+            return Unit.LaptopRepo.Get(filter, orderBy, includeProperties, take);
         }
 
         public IEnumerable<Laptop> GetAll()
         {
-            using (Unit = new UnitOfWork())
-            {
-                return Unit.LaptopRepo.Get(null, null, String.Empty, 0);
-            }
+            return Unit.LaptopRepo.Get(null, null, String.Empty, 0);
         }
 
         public Laptop GetById(int id)
         {
-            using (Unit = new UnitOfWork())
-            {
-                return Unit.LaptopRepo.GetByID(id);
-            }
+            return Unit.LaptopRepo.GetByID(id);
         }
 
         public void Update(Laptop laptop)
         {
-            using (Unit = new UnitOfWork())
-            {
-                Unit.LaptopRepo.Update(laptop);
-                Unit.Save();
-            }
+            Unit.LaptopRepo.Update(laptop);
+            Unit.Save();
         }
-        
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    Unit.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
     }
 }
