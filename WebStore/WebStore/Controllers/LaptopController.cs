@@ -20,6 +20,7 @@ namespace WebStore.Controllers
             using (client = new CrudServiceOf_LaptopClient())
             {
                 laptops = client.GetAllLaptops();
+                client.Close();
             }
             return View(model: laptops);
         }
@@ -32,17 +33,18 @@ namespace WebStore.Controllers
             using (client = new CrudServiceOf_LaptopClient())
             {
                 laptop = client.GetLaptopById(id);
+                client.Close();
             }
             return View(model: laptop);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
             return View();
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Laptop laptop)
@@ -51,7 +53,8 @@ namespace WebStore.Controllers
             {
                 using (client = new CrudServiceOf_LaptopClient())
                 {
-                    bool isdone = client.CreateLaptop(laptop);
+                   bool isdone = client.CreateLaptop(laptop);
+                   client.Close();
                 }
                 return RedirectToAction("Index");
             }
@@ -61,18 +64,19 @@ namespace WebStore.Controllers
             }
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Edit(int id)
         {
             Laptop laptop;
             using (client = new CrudServiceOf_LaptopClient())
             {
                 laptop = client.GetLaptopById(id);
+                client.Close();
             }
             return View(model: laptop);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Laptop laptop)
@@ -82,6 +86,7 @@ namespace WebStore.Controllers
                 using (client = new CrudServiceOf_LaptopClient())
                 {
                     bool isdone = client.Update(laptop);
+                    client.Close();
                 }
 
                 return RedirectToAction("Index");
@@ -92,7 +97,7 @@ namespace WebStore.Controllers
             }
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -103,11 +108,12 @@ namespace WebStore.Controllers
             using (client = new CrudServiceOf_LaptopClient())
             {
                 laptop = client.GetLaptopById((int)id);
+                client.Close();
             }
             return View(laptop);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmation(int id)
@@ -117,6 +123,7 @@ namespace WebStore.Controllers
                 using (client = new CrudServiceOf_LaptopClient())
                 {
                     bool isdone = client.DeleteLaptopById(id);
+                    client.Close();
                 }
                 return RedirectToAction("Index");
             }
