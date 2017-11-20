@@ -9,10 +9,10 @@ namespace Repositories
 {
     public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class,IEntity, new()
     {
-        internal WebStoreContext context;
+        internal DbContext  context;
         internal DbSet<TEntity> Items;
 
-        public BaseRepository(WebStoreContext context)
+        public BaseRepository(DbContext context)
         {
             this.context = context;
             this.Items = context.Set<TEntity>();

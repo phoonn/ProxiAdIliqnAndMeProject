@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.ServiceModel;
 using System.Web;
 using System.Web.Mvc;
+using Unity.Attributes;
 using WebStore.LaptopCrudService;
 
 namespace WebStore.Controllers
@@ -11,17 +13,20 @@ namespace WebStore.Controllers
     [Route("/Laptop")]
     public class LaptopController : Controller
     {
-        private CrudServiceOf_LaptopClient client;
+        private ICrudServiceOf_Laptop client;
+
+        public LaptopController(ICrudServiceOf_Laptop client)
+        {
+            this.client = client;
+        }
+
         // GET: Laptop
         [Route("Index")]
         public ActionResult Index()
         {
             Laptop[] laptops;
-            using (client = new CrudServiceOf_LaptopClient())
-            {
-                laptops = client.GetAllLaptops();
-                client.Close();
-            }
+            laptops = client.GetAllLaptops();
+            ((ICommunicationObject)client).Close();
             return View(model: laptops);
         }
 
@@ -30,32 +35,26 @@ namespace WebStore.Controllers
         public ActionResult Details(int id)
         {
             Laptop laptop;
-            using (client = new CrudServiceOf_LaptopClient())
-            {
-                laptop = client.GetLaptopById(id);
-                client.Close();
-            }
+            laptop = client.GetLaptopById(id);
+            ((ICommunicationObject)client).Close();
             return View(model: laptop);
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Laptop laptop)
         {
             try
             {
-                using (client = new CrudServiceOf_LaptopClient())
-                {
-                   bool isdone = client.CreateLaptop(laptop);
-                   client.Close();
-                }
+                bool isdone = client.CreateLaptop(laptop);
+                ((ICommunicationObject)client).Close();
                 return RedirectToAction("Index");
             }
             catch
@@ -64,31 +63,24 @@ namespace WebStore.Controllers
             }
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
             Laptop laptop;
-            using (client = new CrudServiceOf_LaptopClient())
-            {
-                laptop = client.GetLaptopById(id);
-                client.Close();
-            }
+            laptop = client.GetLaptopById(id);
+            ((ICommunicationObject)client).Close();
             return View(model: laptop);
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Laptop laptop)
         {
             try
             {
-                using (client = new CrudServiceOf_LaptopClient())
-                {
-                    bool isdone = client.Update(laptop);
-                    client.Close();
-                }
-
+                bool isdone = client.Update(laptop);
+                ((ICommunicationObject)client).Close();
                 return RedirectToAction("Index");
             }
             catch
@@ -97,7 +89,7 @@ namespace WebStore.Controllers
             }
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,26 +97,20 @@ namespace WebStore.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Laptop laptop;
-            using (client = new CrudServiceOf_LaptopClient())
-            {
-                laptop = client.GetLaptopById((int)id);
-                client.Close();
-            }
+            laptop = client.GetLaptopById((int)id);
+            ((ICommunicationObject)client).Close();
             return View(laptop);
         }
 
-        [Authorize(Roles = "Administrator")]
+        //[Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmation(int id)
         {
             try
             {
-                using (client = new CrudServiceOf_LaptopClient())
-                {
-                    bool isdone = client.DeleteLaptopById(id);
-                    client.Close();
-                }
+                bool isdone = client.DeleteLaptopById(id);
+                ((ICommunicationObject)client).Close();
                 return RedirectToAction("Index");
             }
             catch

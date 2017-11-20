@@ -1,22 +1,38 @@
 ﻿using System;
 using Models;
 using Interfaces;
+using System.Data.Entity;
+using Unity;
+using Microsoft.Practices.Unity;
+
 
 namespace Repositories
 {
-    public class UnitOfWork : IDisposable , IUnitOfWork
+    public class UnitOfWork : IDisposable , IUnitOfWork 
     {
 
         private bool disposed = false;
 
-        private WebStoreContext context;
+        private DbContext Context;
+        //private DbContext context;
         private BaseRepository<Laptop> laptopRepo;
         private BaseRepository<PC> pcRepo;
 
-        public WebStoreContext Context
+        public UnitOfWork()
         {
-            get { return this.context ?? (context = new WebStoreContext()); }
+            RepoInjector injector = new RepoInjector();
+            Context = injector.container.Resolve<WebStoreContext>();
         }
+
+        //public DbContext Context
+        //{
+        //    get { return this.context; }
+        //}
+
+        //public Context Context
+        //{
+        //    get { return this.context ?? (); }
+        //}
 
         public BaseRepository<Laptop> LaptopRepo
         {
