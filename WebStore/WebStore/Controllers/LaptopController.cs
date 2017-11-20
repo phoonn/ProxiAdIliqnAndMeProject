@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.ServiceModel;
 using System.Web;
 using System.Web.Mvc;
+using Unity.Attributes;
 using WebStore.LaptopCrudService;
 
 namespace WebStore.Controllers
@@ -11,16 +13,20 @@ namespace WebStore.Controllers
     [Route("/Laptop")]
     public class LaptopController : Controller
     {
-        private CrudServiceOf_LaptopClient client;
+        private ICrudServiceOf_Laptop client;
+
+        public LaptopController(ICrudServiceOf_Laptop client)
+        {
+            this.client = client;
+        }
+
         // GET: Laptop
         [Route("Index")]
         public ActionResult Index()
         {
             Laptop[] laptops;
-            using (client = new CrudServiceOf_LaptopClient())
-            {
-                laptops = client.GetAllLaptops();
-            }
+            laptops = client.GetAllLaptops();
+            ((ICommunicationObject)client).Close();
             return View(model: laptops);
         }
 
@@ -29,10 +35,8 @@ namespace WebStore.Controllers
         public ActionResult Details(int id)
         {
             Laptop laptop;
-            using (client = new CrudServiceOf_LaptopClient())
-            {
-                laptop = client.GetLaptopById(id);
-            }
+            laptop = client.GetLaptopById(id);
+            ((ICommunicationObject)client).Close();
             return View(model: laptop);
         }
 
@@ -49,10 +53,8 @@ namespace WebStore.Controllers
         {
             try
             {
-                using (client = new CrudServiceOf_LaptopClient())
-                {
-                    bool isdone = client.CreateLaptop(laptop);
-                }
+                bool isdone = client.CreateLaptop(laptop);
+                ((ICommunicationObject)client).Close();
                 return RedirectToAction("Index");
             }
             catch
@@ -65,10 +67,8 @@ namespace WebStore.Controllers
         public ActionResult Edit(int id)
         {
             Laptop laptop;
-            using (client = new CrudServiceOf_LaptopClient())
-            {
-                laptop = client.GetLaptopById(id);
-            }
+            laptop = client.GetLaptopById(id);
+            ((ICommunicationObject)client).Close();
             return View(model: laptop);
         }
 
@@ -79,11 +79,8 @@ namespace WebStore.Controllers
         {
             try
             {
-                using (client = new CrudServiceOf_LaptopClient())
-                {
-                    bool isdone = client.Update(laptop);
-                }
-
+                bool isdone = client.Update(laptop);
+                ((ICommunicationObject)client).Close();
                 return RedirectToAction("Index");
             }
             catch
@@ -100,10 +97,8 @@ namespace WebStore.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Laptop laptop;
-            using (client = new CrudServiceOf_LaptopClient())
-            {
-                laptop = client.GetLaptopById((int)id);
-            }
+            laptop = client.GetLaptopById((int)id);
+            ((ICommunicationObject)client).Close();
             return View(laptop);
         }
 
@@ -114,10 +109,8 @@ namespace WebStore.Controllers
         {
             try
             {
-                using (client = new CrudServiceOf_LaptopClient())
-                {
-                    bool isdone = client.DeleteLaptopById(id);
-                }
+                bool isdone = client.DeleteLaptopById(id);
+                ((ICommunicationObject)client).Close();
                 return RedirectToAction("Index");
             }
             catch
