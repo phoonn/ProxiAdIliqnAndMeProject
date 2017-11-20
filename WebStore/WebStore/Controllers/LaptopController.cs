@@ -40,13 +40,13 @@ namespace WebStore.Controllers
             return View(model: laptop);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Create()
         {
             return View();
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Laptop laptop)
@@ -63,7 +63,7 @@ namespace WebStore.Controllers
             }
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Edit(int id)
         {
             Laptop laptop;
@@ -72,7 +72,7 @@ namespace WebStore.Controllers
             return View(model: laptop);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Laptop laptop)
@@ -89,7 +89,7 @@ namespace WebStore.Controllers
             }
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -102,7 +102,7 @@ namespace WebStore.Controllers
             return View(laptop);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmation(int id)

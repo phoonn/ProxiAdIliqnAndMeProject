@@ -27,7 +27,8 @@ namespace WebStore.App_Start
                 AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
                 LoginPath = new PathString("/auth/login")
             });
-            
+
+            UnityConfig.ConfigureUnityInj();
             app.CreatePerOwinContext(() => UnityConfig.GetContainer().Resolve<CrudServiceOf_LaptopClient>());
 
             // configure the user manager

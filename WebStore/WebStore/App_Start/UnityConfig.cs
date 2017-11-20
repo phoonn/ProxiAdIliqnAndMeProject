@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Unity;
 using Unity.Injection;
 using WebStore.LaptopCrudService;
@@ -14,11 +10,10 @@ namespace WebStore.App_Start
     {
         private static UnityContainer Container;
 
-        public UnityConfig()
+        static UnityConfig()
         {
             Container = new UnityContainer();
         }
-
         public static UnityContainer GetContainer()
         {
             return Container;
@@ -26,9 +21,10 @@ namespace WebStore.App_Start
 
         public static void ConfigureUnityInj()
         {
+            
             Container.RegisterType<ICrudServiceOf_Laptop, CrudServiceOf_LaptopClient>(new InjectionConstructor());
 
-            //DependencyResolver.SetResolver(new ServiceDependencyResolver(Container));
+            DependencyResolver.SetResolver(new ServiceDependencyResolver(Container));
         }
     }
 }
