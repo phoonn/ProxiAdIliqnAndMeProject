@@ -6,6 +6,7 @@
     <title>Web Store</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/Scripts/jquery-1.10.2.js")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,6 +23,10 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Laptops", "Index", "Laptop")</li>
+                    @if(User.IsInRole("Administrator"))
+                    {
+                        <li>@Html.ActionLink("Users", "Index", "User")</li>
+                    }
                 </ul>
 
                 <div class="navbar-right">

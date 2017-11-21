@@ -211,9 +211,11 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LaptopController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PagedListModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Models\ServiceDependencyResolver.cs" />
     <Compile Include="Models\User.cs" />
@@ -254,6 +256,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\editUser.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -283,6 +286,8 @@
     <Content Include="Views\Laptop\Details.cshtml" />
     <Content Include="Views\Laptop\Edit.cshtml" />
     <Content Include="Views\Laptop\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

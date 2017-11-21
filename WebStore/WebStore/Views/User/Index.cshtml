@@ -1,0 +1,68 @@
+﻿@model WebStore.Models.PagedListModel<WebStore.Models.User>
+
+<h1>Users</h1>
+
+<br />
+
+<table class="table indextable">
+    <tr>
+        <th>
+            UserName
+        </th>
+        <th>
+            Role
+        </th>
+        <th>
+            State
+        </th>
+        <td>
+            Details
+        </td>
+    </tr>
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            <td>
+                @item.UserName
+            </td>
+            <td>
+                @if(item.Roles.SingleOrDefault().RoleId==1.ToString())
+                {
+                    <p>User</p>
+                }
+
+                @if(item.Roles.SingleOrDefault().RoleId == 2.ToString())
+                {
+                    <p>Administrator</p>
+                }
+
+                @if (item.Roles.SingleOrDefault().RoleId == 3.ToString())
+                {
+                    <p>Moderator</p>
+                }
+            </td>
+            <td>
+                @if (item.LockoutEnabled)
+                {
+                    <p>Locked</p>
+                }
+
+                else
+                {
+                    <p>Active</p>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Details", "User", new { userName = item.UserName }, null)
+            </td>
+        </tr>
+
+    }
+</table>
+
+<div style="text-align : center">
+    @for (int i = 1; i <= Model.PageCount; i++)
+    {
+        @Html.ActionLink(i.ToString() + "   ", "Index", new { page = i }, new { @class = "indextable"})
+    }
+</div>

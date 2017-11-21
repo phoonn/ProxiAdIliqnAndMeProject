@@ -1,0 +1,58 @@
+﻿@model WebStore.Models.User
+
+<h2 id="heading">@Model.UserName</h2>
+<table class="indextable table col-md-4">
+    <tr>
+        <th>
+            Current Role : 
+
+            @if (Model.Roles.SingleOrDefault().RoleId == 1.ToString())
+            {
+                <p>User</p>
+            }
+
+            @if (Model.Roles.SingleOrDefault().RoleId == 2.ToString())
+            {
+                <p>Administrator</p>
+            }
+
+            @if (Model.Roles.SingleOrDefault().RoleId == 3.ToString())
+            {
+                <p>Moderator</p>
+            }
+        </th>
+        <th>
+            New Role :
+            <button type="button" id="changeToUser" value="User">User</button>
+            <button type="button" id="changeToAdministrator" value="Administrator">Administrator</button>
+            <button type="button" id="changeToModerator" value="Moderator">Moderator</button>
+        </th>
+    </tr>
+    <tr>
+        <th>
+            Current State:
+
+            @if (Model.LockoutEnabled)
+            {
+                <p>Locked</p>
+            }
+
+            else
+            {
+                <p>Active</p>
+            }
+        </th>
+        <th>
+            New State:
+            <button type="button" id="changeToLocked" value="1">Lock</button>
+            <button type="button" id="changeToActive" value="0">Active</button>
+        </th>
+    </tr>
+</table>
+
+    <button type="button" id="deleteButton" value="@Model.UserName">Delete User</button>
+
+
+
+
+<script src="~/Scripts/editUser.js" type="text/javascript"></script>
