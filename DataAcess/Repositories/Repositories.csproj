@@ -67,7 +67,7 @@
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepoInjector.cs" />
+    <Compile Include="RepoContainer.cs" />
     <Compile Include="UnitOfWork.cs" />
     <Compile Include="WebStoreContext.cs" />
   </ItemGroup>

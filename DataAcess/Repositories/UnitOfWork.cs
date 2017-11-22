@@ -19,7 +19,6 @@ namespace Repositories
         
         public UnitOfWork(DbContext context)
         {
-            //RepoInjector injector = new RepoInjector();
             Context = context;
         }
 
@@ -29,20 +28,10 @@ namespace Repositories
             {
                 return repositories[typeof(T)] as IRepository<T>;
             }
-
-            IRepository<T> repo = new BaseRepository<T>(Context);
+            IRepository<T> repo = RepoContainer.container.Resolve<IRepository<T>>(new ParameterOverride("context",Context));
             repositories.Add(typeof(T), repo);
             return repo;
         }
-        //public DbContext Context
-        //{
-        //    get { return this.context; }
-        //}
-
-        //public Context Context
-        //{
-        //    get { return this.context ?? (); }
-        //}
 
         public void Save()
         {

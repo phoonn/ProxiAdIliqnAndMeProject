@@ -14,11 +14,6 @@ namespace BusinessServices
 
         private bool disposed = false;
 
-        //private UnitOfWork Unit
-        //{
-        //    get { return this.unit ?? ( unit = new UnitOfWork()); }
-        //}
-
         public LaptopsLogic(IUnitOfWork unit)
         {
             Unit = unit;

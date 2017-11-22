@@ -7,9 +7,7 @@ namespace Repositories
     {
         public DbSet<Laptop> Laptops { get; set; }
         public DbSet<PC> PCs { get; set; }
-
-
-
+        
         public WebStoreContext() : base("name=DbConnection")
         {
             this.Laptops = this.Set<Laptop>();
