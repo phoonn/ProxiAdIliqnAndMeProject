@@ -4,7 +4,8 @@ using Interfaces;
 using System.Data.Entity;
 using Unity;
 using Microsoft.Practices.Unity;
-
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Repositories
 {
@@ -14,16 +15,25 @@ namespace Repositories
         private bool disposed = false;
 
         private DbContext Context;
-        //private DbContext context;
-        private BaseRepository<Laptop> laptopRepo;
-        private BaseRepository<PC> pcRepo;
-
-        public UnitOfWork()
+        private Dictionary<Type, object> repositories = new Dictionary<Type, object>();
+        
+        public UnitOfWork(DbContext context)
         {
-            RepoInjector injector = new RepoInjector();
-            Context = injector.container.Resolve<WebStoreContext>();
+            //RepoInjector injector = new RepoInjector();
+            Context = context;
         }
 
+        public IRepository<T> Repository<T>() where T:class,IEntity,new()
+        {
+            if (repositories.Keys.Contains(typeof(T)) == true)
+            {
+                return repositories[typeof(T)] as IRepository<T>;
+            }
+
+            IRepository<T> repo = new BaseRepository<T>(Context);
+            repositories.Add(typeof(T), repo);
+            return repo;
+        }
         //public DbContext Context
         //{
         //    get { return this.context; }
@@ -33,22 +43,6 @@ namespace Repositories
         //{
         //    get { return this.context ?? (); }
         //}
-
-        public BaseRepository<Laptop> LaptopRepo
-        {
-            get
-            {
-                return this.laptopRepo ?? (laptopRepo =new BaseRepository<Laptop>(Context));
-            }
-        }
-
-        public BaseRepository<PC> PcRepo
-        {
-            get
-            {
-                return this.pcRepo ?? (pcRepo =  new BaseRepository<PC>(Context));
-            }
-        }
 
         public void Save()
         {
@@ -72,5 +66,7 @@ namespace Repositories
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
+        
     }
 }

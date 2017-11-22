@@ -10,30 +10,35 @@ namespace BusinessServices
 {
     public class LaptopsLogic : ICrudLogic<Laptop> , IDisposable
     {
-        private UnitOfWork unit;
+        private IUnitOfWork Unit;
 
         private bool disposed = false;
 
-        private UnitOfWork Unit
+        //private UnitOfWork Unit
+        //{
+        //    get { return this.unit ?? ( unit = new UnitOfWork()); }
+        //}
+
+        public LaptopsLogic(IUnitOfWork unit)
         {
-            get { return this.unit ?? ( unit = new UnitOfWork()); }
+            Unit = unit;
         }
         
         public void Create(Laptop laptop)
         {
-            Unit.LaptopRepo.Insert(laptop);
+            Unit.Repository<Laptop>().Insert(laptop);
             Unit.Save();
         }
 
         public void Delete(Laptop laptop)
         {
-            Unit.LaptopRepo.Delete(laptop);
+            Unit.Repository<Laptop>().Delete(laptop);
             Unit.Save();
         }
 
         public void DeleteById(int id)
         {
-            Unit.LaptopRepo.Delete(id);
+            Unit.Repository<Laptop>().Delete(id);
             Unit.Save();
         }
 
@@ -42,22 +47,22 @@ namespace BusinessServices
             Func<IQueryable<Laptop>, IOrderedQueryable<Laptop>> orderBy = null,
             string includeProperties = "", int take = 0)
         {
-            return Unit.LaptopRepo.Get(filter, orderBy, includeProperties, take);
+            return Unit.Repository<Laptop>().Get(filter, orderBy, includeProperties, take);
         }
 
         public IEnumerable<Laptop> GetAll()
         {
-            return Unit.LaptopRepo.Get(null, null, String.Empty, 0);
+            return Unit.Repository<Laptop>().Get(null, null, String.Empty, 0);
         }
 
         public Laptop GetById(int id)
         {
-            return Unit.LaptopRepo.GetByID(id);
+            return Unit.Repository<Laptop>().GetByID(id);
         }
 
         public void Update(Laptop laptop)
         {
-            Unit.LaptopRepo.Update(laptop);
+            Unit.Repository<Laptop>().Update(laptop);
             Unit.Save();
         }
 

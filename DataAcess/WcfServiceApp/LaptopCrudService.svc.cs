@@ -10,12 +10,13 @@ namespace WcfServiceApp
     // NOTE: In order to launch WCF Test Client for testing this service, please select LaptopCrudService.svc or LaptopCrudService.svc.cs at the Solution Explorer and start debugging.
     public class LaptopCrudService : ICrudService<Laptop>
     {
-        private LaptopsLogic laptoplogic;
+        private ICrudLogic<Laptop> LaptopLogic;
 
-        public LaptopsLogic LaptopLogic
+        public LaptopCrudService (ICrudLogic<Laptop> LaptopLogic)
         {
-            get { return this.laptoplogic ?? (laptoplogic = new LaptopsLogic()); }
+            this.LaptopLogic = LaptopLogic;
         }
+
         public IEnumerable<Laptop> GetAllLaptops()
         {
             return LaptopLogic.GetAll();
