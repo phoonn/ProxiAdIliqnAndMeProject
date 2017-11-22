@@ -32,3 +32,13 @@ textarea {
     border-style: solid;
     background-color: rgba(235, 195, 195, 0.54);
 }
+
+.smallimage{
+    width:75px;
+    height:75px;
+}
+
+.bigimage{
+    max-height : 90%;
+    max-width : 90%;
+}

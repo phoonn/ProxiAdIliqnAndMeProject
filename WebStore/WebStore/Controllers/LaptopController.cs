@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.ServiceModel;
@@ -7,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Unity.Attributes;
 using WebStore.LaptopCrudService;
+using WebStore.Models;
 
 namespace WebStore.Controllers
 {
@@ -49,11 +51,29 @@ namespace WebStore.Controllers
         [Authorize(Roles = "Administrator, Moderator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Laptop laptop)
+        public ActionResult Create(CreateLaptopModel laptop)
         {
             try
             {
-                bool isdone = client.CreateLaptop(laptop);
+                byte[] fileData = null;
+                using (var binaryReader = new BinaryReader(Request.Files["photo"].InputStream))
+                {
+                    fileData = binaryReader.ReadBytes(Request.Files["photo"].ContentLength);
+                }
+                var newLaptop = new Laptop
+                {
+                    Brand = laptop.Brand,
+                    Model = laptop.Model,
+                    Price = laptop.Price,
+                    OS = laptop.OS,
+                    Image = fileData,
+                    Ram = laptop.Ram,
+                    Processor = laptop.Processor,
+                    HardDisk = laptop.HardDisk,
+                    Screen = laptop.Screen
+                };
+
+                bool isdone = client.CreateLaptop(newLaptop);
                 ((ICommunicationObject)client).Close();
                 return RedirectToAction("Index");
             }
@@ -75,11 +95,23 @@ namespace WebStore.Controllers
         [Authorize(Roles = "Administrator, Moderator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Laptop laptop)
+        public ActionResult Edit(CreateLaptopModel laptop)
         {
             try
             {
-                bool isdone = client.Update(laptop);
+                var newLaptop = new Laptop
+                {
+                    Brand = laptop.Brand,
+                    Model = laptop.Model,
+                    Price = laptop.Price,
+                    OS = laptop.OS,
+                    Ram = laptop.Ram,
+                    Processor = laptop.Processor,
+                    HardDisk = laptop.HardDisk,
+                    Screen = laptop.Screen
+                };
+
+                bool isdone = client.Update(newLaptop);
                 ((ICommunicationObject)client).Close();
                 return RedirectToAction("Index");
             }

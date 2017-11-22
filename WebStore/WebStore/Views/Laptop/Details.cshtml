@@ -6,7 +6,22 @@
 
 <h2>Details</h2>
 
-<div>
+<div class="indextable col-md-6">
+    @{
+        if (Model.Image != null)
+        {
+            var base64 = Convert.ToBase64String(Model.Image.ToArray());
+            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+            <img src="@imgSrc" />
+        }
+        else
+        {
+            <h1>No Image</h1>
+        }
+    }
+</div>
+
+<div class="indextable col-md-6">
     <h4>Laptop</h4>
     <hr />
     <dl class="dl-horizontal">
