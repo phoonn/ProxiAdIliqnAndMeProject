@@ -29,7 +29,7 @@ namespace WebStore.App_Start
             });
 
             UnityConfig.ConfigureUnityInj();
-            app.CreatePerOwinContext(() => UnityConfig.GetContainer().Resolve<CrudServiceOf_LaptopClient>());
+            app.CreatePerOwinContext(() => UnityConfig.GetContainer().Resolve<CrudServiceOf_LaptopsClient>());
 
             // configure the user manager
             UserManagerFactory = () =>

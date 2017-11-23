@@ -7,72 +7,72 @@
       <xsd:import schemaLocation="http://localhost:55762/LaptopCrudService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Models" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="ICrudServiceOf_Laptop_GetAllLaptops_InputMessage">
+  <wsdl:message name="ICrudServiceOf_Laptops_GetAllLaptops_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllLaptops" />
   </wsdl:message>
-  <wsdl:message name="ICrudServiceOf_Laptop_GetAllLaptops_OutputMessage">
+  <wsdl:message name="ICrudServiceOf_Laptops_GetAllLaptops_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllLaptopsResponse" />
   </wsdl:message>
-  <wsdl:message name="ICrudServiceOf_Laptop_GetLaptopById_InputMessage">
+  <wsdl:message name="ICrudServiceOf_Laptops_GetLaptopById_InputMessage">
     <wsdl:part name="parameters" element="tns:GetLaptopById" />
   </wsdl:message>
-  <wsdl:message name="ICrudServiceOf_Laptop_GetLaptopById_OutputMessage">
+  <wsdl:message name="ICrudServiceOf_Laptops_GetLaptopById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetLaptopByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="ICrudServiceOf_Laptop_DeleteLaptop_InputMessage">
+  <wsdl:message name="ICrudServiceOf_Laptops_DeleteLaptop_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteLaptop" />
   </wsdl:message>
-  <wsdl:message name="ICrudServiceOf_Laptop_DeleteLaptop_OutputMessage">
+  <wsdl:message name="ICrudServiceOf_Laptops_DeleteLaptop_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteLaptopResponse" />
   </wsdl:message>
-  <wsdl:message name="ICrudServiceOf_Laptop_DeleteLaptopById_InputMessage">
+  <wsdl:message name="ICrudServiceOf_Laptops_DeleteLaptopById_InputMessage">
     <wsdl:part name="parameters" element="tns:DeleteLaptopById" />
   </wsdl:message>
-  <wsdl:message name="ICrudServiceOf_Laptop_DeleteLaptopById_OutputMessage">
+  <wsdl:message name="ICrudServiceOf_Laptops_DeleteLaptopById_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteLaptopByIdResponse" />
   </wsdl:message>
-  <wsdl:message name="ICrudServiceOf_Laptop_CreateLaptop_InputMessage">
+  <wsdl:message name="ICrudServiceOf_Laptops_CreateLaptop_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateLaptop" />
   </wsdl:message>
-  <wsdl:message name="ICrudServiceOf_Laptop_CreateLaptop_OutputMessage">
+  <wsdl:message name="ICrudServiceOf_Laptops_CreateLaptop_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateLaptopResponse" />
   </wsdl:message>
-  <wsdl:message name="ICrudServiceOf_Laptop_Update_InputMessage">
+  <wsdl:message name="ICrudServiceOf_Laptops_Update_InputMessage">
     <wsdl:part name="parameters" element="tns:Update" />
   </wsdl:message>
-  <wsdl:message name="ICrudServiceOf_Laptop_Update_OutputMessage">
+  <wsdl:message name="ICrudServiceOf_Laptops_Update_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateResponse" />
   </wsdl:message>
-  <wsdl:portType name="ICrudServiceOf_Laptop">
+  <wsdl:portType name="ICrudServiceOf_Laptops">
     <wsdl:operation name="GetAllLaptops">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptop/GetAllLaptops" message="tns:ICrudServiceOf_Laptop_GetAllLaptops_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptop/GetAllLaptopsResponse" message="tns:ICrudServiceOf_Laptop_GetAllLaptops_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptops/GetAllLaptops" message="tns:ICrudServiceOf_Laptops_GetAllLaptops_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptops/GetAllLaptopsResponse" message="tns:ICrudServiceOf_Laptops_GetAllLaptops_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetLaptopById">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptop/GetLaptopById" message="tns:ICrudServiceOf_Laptop_GetLaptopById_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptop/GetLaptopByIdResponse" message="tns:ICrudServiceOf_Laptop_GetLaptopById_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptops/GetLaptopById" message="tns:ICrudServiceOf_Laptops_GetLaptopById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptops/GetLaptopByIdResponse" message="tns:ICrudServiceOf_Laptops_GetLaptopById_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteLaptop">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptop/DeleteLaptop" message="tns:ICrudServiceOf_Laptop_DeleteLaptop_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptop/DeleteLaptopResponse" message="tns:ICrudServiceOf_Laptop_DeleteLaptop_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptop" message="tns:ICrudServiceOf_Laptops_DeleteLaptop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptopResponse" message="tns:ICrudServiceOf_Laptops_DeleteLaptop_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DeleteLaptopById">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptop/DeleteLaptopById" message="tns:ICrudServiceOf_Laptop_DeleteLaptopById_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptop/DeleteLaptopByIdResponse" message="tns:ICrudServiceOf_Laptop_DeleteLaptopById_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptopById" message="tns:ICrudServiceOf_Laptops_DeleteLaptopById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptopByIdResponse" message="tns:ICrudServiceOf_Laptops_DeleteLaptopById_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CreateLaptop">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptop/CreateLaptop" message="tns:ICrudServiceOf_Laptop_CreateLaptop_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptop/CreateLaptopResponse" message="tns:ICrudServiceOf_Laptop_CreateLaptop_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptops/CreateLaptop" message="tns:ICrudServiceOf_Laptops_CreateLaptop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptops/CreateLaptopResponse" message="tns:ICrudServiceOf_Laptops_CreateLaptop_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Update">
-      <wsdl:input wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptop/Update" message="tns:ICrudServiceOf_Laptop_Update_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptop/UpdateResponse" message="tns:ICrudServiceOf_Laptop_Update_OutputMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptops/Update" message="tns:ICrudServiceOf_Laptops_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICrudServiceOf_Laptops/UpdateResponse" message="tns:ICrudServiceOf_Laptops_Update_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_ICrudServiceOf_Laptop" type="tns:ICrudServiceOf_Laptop">
+  <wsdl:binding name="BasicHttpBinding_ICrudServiceOf_Laptops" type="tns:ICrudServiceOf_Laptops">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllLaptops">
-      <soap:operation soapAction="http://tempuri.org/ICrudServiceOf_Laptop/GetAllLaptops" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ICrudServiceOf_Laptops/GetAllLaptops" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -81,7 +81,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="GetLaptopById">
-      <soap:operation soapAction="http://tempuri.org/ICrudServiceOf_Laptop/GetLaptopById" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ICrudServiceOf_Laptops/GetLaptopById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -90,7 +90,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteLaptop">
-      <soap:operation soapAction="http://tempuri.org/ICrudServiceOf_Laptop/DeleteLaptop" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptop" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -99,7 +99,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="DeleteLaptopById">
-      <soap:operation soapAction="http://tempuri.org/ICrudServiceOf_Laptop/DeleteLaptopById" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptopById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -108,7 +108,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="CreateLaptop">
-      <soap:operation soapAction="http://tempuri.org/ICrudServiceOf_Laptop/CreateLaptop" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ICrudServiceOf_Laptops/CreateLaptop" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -117,7 +117,7 @@
       </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="Update">
-      <soap:operation soapAction="http://tempuri.org/ICrudServiceOf_Laptop/Update" style="document" />
+      <soap:operation soapAction="http://tempuri.org/ICrudServiceOf_Laptops/Update" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -127,7 +127,7 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="LaptopCrudService">
-    <wsdl:port name="BasicHttpBinding_ICrudServiceOf_Laptop" binding="tns:BasicHttpBinding_ICrudServiceOf_Laptop">
+    <wsdl:port name="BasicHttpBinding_ICrudServiceOf_Laptops" binding="tns:BasicHttpBinding_ICrudServiceOf_Laptops">
       <soap:address location="http://localhost:55762/LaptopCrudService.svc" />
     </wsdl:port>
   </wsdl:service>

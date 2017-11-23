@@ -9,7 +9,7 @@
   <xs:element name="GetAllLaptopsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="GetAllLaptopsResult" nillable="true" type="q1:ArrayOfLaptop" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="GetAllLaptopsResult" nillable="true" type="q1:ArrayOfLaptops" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -23,14 +23,14 @@
   <xs:element name="GetLaptopByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="GetLaptopByIdResult" nillable="true" type="q2:Laptop" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="GetLaptopByIdResult" nillable="true" type="q2:Laptops" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeleteLaptop">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="entity" nillable="true" type="q3:Laptop" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="entity" nillable="true" type="q3:Laptops" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -58,7 +58,7 @@
   <xs:element name="CreateLaptop">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="entity" nillable="true" type="q4:Laptop" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="entity" nillable="true" type="q4:Laptops" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -72,7 +72,7 @@
   <xs:element name="Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="entity" nillable="true" type="q5:Laptop" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="entity" nillable="true" type="q5:Laptops" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

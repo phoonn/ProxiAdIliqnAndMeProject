@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace BusinessServices
 {
-    public class LaptopsLogic : ICrudLogic<Laptop> , IDisposable
+    public class LaptopsLogic : ICrudLogic<Laptops> , IDisposable
     {
         private IUnitOfWork Unit;
 
@@ -19,45 +19,45 @@ namespace BusinessServices
             Unit = unit;
         }
         
-        public void Create(Laptop laptop)
+        public void Create(Laptops laptop)
         {
-            Unit.Repository<Laptop>().Insert(laptop);
+            Unit.Repository<Laptops>().Insert(laptop);
             Unit.Save();
         }
 
-        public void Delete(Laptop laptop)
+        public void Delete(Laptops laptop)
         {
-            Unit.Repository<Laptop>().Delete(laptop);
+            Unit.Repository<Laptops>().Delete(laptop);
             Unit.Save();
         }
 
         public void DeleteById(int id)
         {
-            Unit.Repository<Laptop>().Delete(id);
+            Unit.Repository<Laptops>().Delete(id);
             Unit.Save();
         }
 
-        public IEnumerable<Laptop> GetAll(
-            Expression<Func<Laptop, bool>> filter = null,
-            Func<IQueryable<Laptop>, IOrderedQueryable<Laptop>> orderBy = null,
+        public IEnumerable<Laptops> GetAll(
+            Expression<Func<Laptops, bool>> filter = null,
+            Func<IQueryable<Laptops>, IOrderedQueryable<Laptops>> orderBy = null,
             string includeProperties = "", int take = 0)
         {
-            return Unit.Repository<Laptop>().Get(filter, orderBy, includeProperties, take);
+            return Unit.Repository<Laptops>().Get(filter, orderBy, includeProperties, take);
         }
 
-        public IEnumerable<Laptop> GetAll()
+        public IEnumerable<Laptops> GetAll()
         {
-            return Unit.Repository<Laptop>().Get(null, null, String.Empty, 0);
+            return Unit.Repository<Laptops>().Get(null, null, String.Empty, 0);
         }
 
-        public Laptop GetById(int id)
+        public Laptops GetById(int id)
         {
-            return Unit.Repository<Laptop>().GetByID(id);
+            return Unit.Repository<Laptops>().GetByID(id);
         }
 
-        public void Update(Laptop laptop)
+        public void Update(Laptops laptop)
         {
-            Unit.Repository<Laptop>().Update(laptop);
+            Unit.Repository<Laptops>().Update(laptop);
             Unit.Save();
         }
 

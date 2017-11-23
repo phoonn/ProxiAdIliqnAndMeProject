@@ -8,26 +8,26 @@ namespace WcfServiceApp
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "LaptopCrudService" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select LaptopCrudService.svc or LaptopCrudService.svc.cs at the Solution Explorer and start debugging.
-    public class LaptopCrudService : ICrudService<Laptop>
+    public class LaptopCrudService : ICrudService<Laptops>
     {
-        private ICrudLogic<Laptop> LaptopLogic;
+        private ICrudLogic<Laptops> LaptopLogic;
 
-        public LaptopCrudService (ICrudLogic<Laptop> LaptopLogic)
+        public LaptopCrudService (ICrudLogic<Laptops> LaptopLogic)
         {
             this.LaptopLogic = LaptopLogic;
         }
 
-        public IEnumerable<Laptop> GetAllLaptops()
+        public IEnumerable<Laptops> GetAllLaptops()
         {
             return LaptopLogic.GetAll();
         }
 
-        public Laptop GetLaptopById(int id)
+        public Laptops GetLaptopById(int id)
         {
             return LaptopLogic.GetById(id);
         }
 
-        public bool DeleteLaptop(Laptop laptop)
+        public bool DeleteLaptop(Laptops laptop)
         {
             try
             {
@@ -53,7 +53,7 @@ namespace WcfServiceApp
             }
         }
 
-        public bool CreateLaptop(Laptop laptop)
+        public bool CreateLaptop(Laptops laptop)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace WcfServiceApp
             }
         }
 
-        public bool Update(Laptop laptop)
+        public bool Update(Laptops laptop)
         {
             try
             {

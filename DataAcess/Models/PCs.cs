@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace Models
 {
     [DataContract]
-    public class PC : IEntity
+    public class PCs : IEntity
     {
         [Column("PCID"),DataMember]
         public int Id { get; set; }

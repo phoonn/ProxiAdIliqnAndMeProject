@@ -12,10 +12,12 @@ namespace WcfServiceApp
     {
         protected override void ConfigureContainer(IUnityContainer container)
         {
-            container.RegisterType<ICrudLogic<Laptop>, LaptopsLogic>();
-            container.RegisterType<ICrudService<Laptop>, LaptopCrudService>();
+            container.RegisterType<ICrudLogic<Laptops>, LaptopsLogic>();
+            container.RegisterType<ICrudService<Laptops>, LaptopCrudService>();
             container.RegisterType<DbContext, WebStoreContext>();
             container.RegisterType<IUnitOfWork, UnitOfWork>();
+            container.RegisterType<IUsersLaptopLogic<Laptops>, UsersLaptopLogic>();
+            container.RegisterType<IUsersLaptopService<Laptops>,UsersLaptopService>();
         }
     }    
 }

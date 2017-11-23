@@ -14,7 +14,7 @@ namespace Repositories
 
         private bool disposed = false;
 
-        private DbContext Context;
+        public DbContext Context;
         private Dictionary<Type, object> repositories = new Dictionary<Type, object>();
         
         public UnitOfWork(DbContext context)

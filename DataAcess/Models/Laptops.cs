@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 namespace Models
 {
     [DataContract]
-    public class Laptop : IEntity
+    public class Laptops : IEntity
     {
         [Column("LaptopID"),DataMember]
         public int Id { get; set; }
@@ -27,6 +27,7 @@ namespace Models
         public string HardDisk { get; set; }
         [DataMember]
         public double Screen { get; set; }
+        
 
     }
 }

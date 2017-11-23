@@ -17,8 +17,8 @@ namespace Repositories
         static RepoContainer()
         {
             container = new UnityContainer();
-            container.RegisterType<IRepository<Laptop>, BaseRepository<Laptop>>(new InjectionConstructor(new InjectionParameter<DbContext>(null)));
-            container.RegisterType<IRepository<PC>, BaseRepository<PC>>(new InjectionConstructor(new InjectionParameter<DbContext>(null)));
+            container.RegisterType<IRepository<Laptops>, BaseRepository<Laptops>>(new InjectionConstructor(new InjectionParameter<DbContext>(null)));
+            container.RegisterType<IRepository<PCs>, BaseRepository<PCs>>(new InjectionConstructor(new InjectionParameter<DbContext>(null)));
         }
     }
 }

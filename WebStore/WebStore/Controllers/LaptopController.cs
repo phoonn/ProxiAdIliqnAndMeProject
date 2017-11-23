@@ -15,9 +15,9 @@ namespace WebStore.Controllers
     [Route("/Laptop")]
     public class LaptopController : Controller
     {
-        private ICrudServiceOf_Laptop client;
+        private ICrudServiceOf_Laptops client;
 
-        public LaptopController(ICrudServiceOf_Laptop client)
+        public LaptopController(ICrudServiceOf_Laptops client)
         {
             this.client = client;
         }
@@ -26,7 +26,7 @@ namespace WebStore.Controllers
         [Route("Index")]
         public ActionResult Index()
         {
-            Laptop[] laptops;
+            Laptops[] laptops;
             laptops = client.GetAllLaptops();
             ((ICommunicationObject)client).Close();
             return View(model: laptops);
@@ -36,7 +36,7 @@ namespace WebStore.Controllers
         [Route("Detalis/{int id}")]
         public ActionResult Details(int id)
         {
-            Laptop laptop;
+            Laptops laptop;
             laptop = client.GetLaptopById(id);
             ((ICommunicationObject)client).Close();
             return View(model: laptop);
@@ -60,7 +60,7 @@ namespace WebStore.Controllers
                 {
                     fileData = binaryReader.ReadBytes(Request.Files["photo"].ContentLength);
                 }
-                var newLaptop = new Laptop
+                var newLaptop = new Laptops
                 {
                     Brand = laptop.Brand,
                     Model = laptop.Model,
@@ -86,7 +86,7 @@ namespace WebStore.Controllers
         [Authorize(Roles = "Administrator, Moderator")]
         public ActionResult Edit(int id)
         {
-            Laptop laptop;
+            Laptops laptop;
             laptop = client.GetLaptopById(id);
             ((ICommunicationObject)client).Close();
             return View(model: laptop);
@@ -99,7 +99,7 @@ namespace WebStore.Controllers
         {
             try
             {
-                var newLaptop = new Laptop
+                var newLaptop = new Laptops
                 {
                     Brand = laptop.Brand,
                     Model = laptop.Model,
@@ -128,7 +128,7 @@ namespace WebStore.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Laptop laptop;
+            Laptops laptop;
             laptop = client.GetLaptopById((int)id);
             ((ICommunicationObject)client).Close();
             return View(laptop);
