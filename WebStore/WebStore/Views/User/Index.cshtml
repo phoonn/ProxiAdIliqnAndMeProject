@@ -53,7 +53,7 @@
                 }
             </td>
             <td>
-                @Html.ActionLink("Edit", "Details", "User", new { userName = item.UserName }, null)
+                @Html.ActionLink("Edit", "Details", "User", new { userName = item.UserName }, new { @class = "btnflt4" })
             </td>
         </tr>
 
@@ -63,6 +63,6 @@
 <div style="text-align : center">
     @for (int i = 1; i <= Model.PageCount; i++)
     {
-        @Html.ActionLink(i.ToString() + "   ", "Index", new { page = i }, new { @class = "indextable"})
+        @Html.ActionLink(i.ToString() + "   ", "Index", new { page = i }, new { @class = "btnflt4" })
     }
 </div>

@@ -50,9 +50,9 @@
     </tr>
 </table>
 
-    <button type="button" id="deleteButton" value="@Model.UserName">Delete User</button>
+    <button type="button" id="deleteButton" class="btnflt4" value="@Model.UserName">Delete User</button>
 
 
-
+@Html.ActionLink("Back to List", "Index", null, new { @class = "btnflt4" })
 
 <script src="~/Scripts/editUser.js" type="text/javascript"></script>

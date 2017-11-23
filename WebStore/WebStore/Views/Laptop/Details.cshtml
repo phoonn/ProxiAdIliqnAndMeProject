@@ -6,13 +6,13 @@
 
 <h2>Details</h2>
 
-<div class="indextable col-md-6">
+<div class="col-md-4">
     @{
         if (Model.Image != null)
         {
             var base64 = Convert.ToBase64String(Model.Image.ToArray());
             var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-            <img src="@imgSrc" />
+            <img src="@imgSrc" class="bigimage"/>
         }
         else
         {
@@ -21,7 +21,7 @@
     }
 </div>
 
-<div class="indextable col-md-6">
+<div class="indextable col-md-8">
     <h4>Laptop</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -92,6 +92,9 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btnflt4" })
+    }
+    @Html.ActionLink("Back to List", "Index" , null, new { @class = "btnflt4" })
 </p>
