@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Interfaces
 {
     [ServiceContract]
-    public interface IUsersLaptopService<T> where T: class,IEntity,new()
+    public interface IUsersLaptopService<T> where T: class
     {
         [OperationContract]
         IEnumerable<T> GetAllUserLaptops(string userid);

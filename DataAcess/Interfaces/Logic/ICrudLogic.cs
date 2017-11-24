@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    public interface ICrudLogic<T> where T : class, IEntity , new()
+    public interface ICrudLogic<T> : IDisposable where T : class 
     {
         IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,

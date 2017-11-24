@@ -7,14 +7,16 @@ using Interfaces;
 
 namespace Repositories
 {
-    public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class,IEntity, new()
+    public class BaseRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         internal DbContext  context;
+        internal IUnitOfWork unit;
         internal DbSet<TEntity> Items;
 
-        public BaseRepository(DbContext context)
+        public BaseRepository(IUnitOfWork unit)
         {
-            this.context = context;
+            this.unit = unit;
+            this.context = unit.Context;
             this.Items = context.Set<TEntity>();
         }
 
@@ -89,6 +91,12 @@ namespace Repositories
                 Items.Attach(entityToUpdate);
             }
             context.Entry(entityToUpdate).State = EntityState.Modified;
+        }
+
+        public virtual IEnumerable<TEntity> SqlCommand(string sql)
+        {
+            var query  = context.Database.SqlQuery<TEntity>(sql); 
+            return query;
         }
     }
 }

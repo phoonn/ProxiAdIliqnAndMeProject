@@ -51,7 +51,7 @@ namespace WebStore.Controllers
         [Authorize(Roles = "Administrator, Moderator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(CreateLaptopModel laptop)
+        public ActionResult Create(Laptops laptop)
         {
             try
             {
@@ -95,12 +95,13 @@ namespace WebStore.Controllers
         [Authorize(Roles = "Administrator, Moderator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(CreateLaptopModel laptop)
+        public ActionResult Edit(Laptops laptop)
         {
             try
             {
                 var newLaptop = new Laptops
                 {
+                    LaptopID = laptop.LaptopID,
                     Brand = laptop.Brand,
                     Model = laptop.Model,
                     Price = laptop.Price,

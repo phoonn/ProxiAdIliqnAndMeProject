@@ -15,9 +15,12 @@ namespace WcfServiceApp
             container.RegisterType<ICrudLogic<Laptops>, LaptopsLogic>();
             container.RegisterType<ICrudService<Laptops>, LaptopCrudService>();
             container.RegisterType<DbContext, WebStoreContext>();
-            container.RegisterType<IUnitOfWork, UnitOfWork>();
+            container.RegisterType<IUnitOfWork, UnitOfWork>(new PerResolveLifetimeManager());
+            container.RegisterType<IRepository<Laptops>,BaseRepository<Laptops>>();
+            //second service
+            container.RegisterType<IRepository<UsersLaptops>,BaseRepository<UsersLaptops>>();
             container.RegisterType<IUsersLaptopLogic<Laptops>, UsersLaptopLogic>();
-            container.RegisterType<IUsersLaptopService<Laptops>,UsersLaptopService>();
+            container.RegisterType<IUsersLaptopService<Laptops>, UsersLaptopService>();
         }
     }    
 }

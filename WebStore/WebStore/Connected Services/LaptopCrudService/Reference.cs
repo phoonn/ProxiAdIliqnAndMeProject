@@ -29,10 +29,10 @@ namespace WebStore.LaptopCrudService {
         private string HardDiskField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
+        private byte[] ImageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] ImageField;
+        private int LaptopIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ModelField;
@@ -89,19 +89,6 @@ namespace WebStore.LaptopCrudService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public byte[] Image {
             get {
                 return this.ImageField;
@@ -110,6 +97,19 @@ namespace WebStore.LaptopCrudService {
                 if ((object.ReferenceEquals(this.ImageField, value) != true)) {
                     this.ImageField = value;
                     this.RaisePropertyChanged("Image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LaptopID {
+            get {
+                return this.LaptopIDField;
+            }
+            set {
+                if ((this.LaptopIDField.Equals(value) != true)) {
+                    this.LaptopIDField = value;
+                    this.RaisePropertyChanged("LaptopID");
                 }
             }
         }

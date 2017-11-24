@@ -61,7 +61,6 @@
     <Compile Include="LaptopsLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsersLaptopLogic.cs" />
-    <Compile Include="UsersLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">

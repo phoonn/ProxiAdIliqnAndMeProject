@@ -1,14 +1,15 @@
 ﻿using Interfaces;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
 
 namespace Models
 {
     [DataContract]
-    public class Laptops : IEntity
+    public class Laptops 
     {
-        [Column("LaptopID"),DataMember]
-        public int Id { get; set; }
+        [DataMember,Key]
+        public int LaptopID { get; set; }
         [DataMember]
         public string Brand { get; set; }
         [DataMember]

@@ -27,6 +27,8 @@ namespace Interfaces
         
 
         void Update(T entityToUpdate);
+
+        IEnumerable<T> SqlCommand(string sql);
         
     }
 }

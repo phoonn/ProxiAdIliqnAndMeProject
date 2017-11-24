@@ -1,14 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using Interfaces;
 using System.Runtime.Serialization;
+using System.ComponentModel.DataAnnotations;
 
 namespace Models
 {
     [DataContract]
-    public class PCs : IEntity
+    public class PCs
     {
-        [Column("PCID"),DataMember]
-        public int Id { get; set; }
+        [DataMember,Key]
+        public int PCID { get; set; }
         [DataMember]
         public decimal Price { get; set; }
         [DataMember]

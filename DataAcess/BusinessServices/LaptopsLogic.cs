@@ -1,39 +1,40 @@
 ﻿using System.Collections.Generic;
-using Interfaces;
 using Models;
-using Repositories;
 using System.Linq.Expressions;
 using System;
 using System.Linq;
+using Interfaces;
 
 namespace BusinessServices
 {
     public class LaptopsLogic : ICrudLogic<Laptops> , IDisposable
     {
         private IUnitOfWork Unit;
+        private IRepository<Laptops> LaptopRepo;
 
         private bool disposed = false;
 
-        public LaptopsLogic(IUnitOfWork unit)
+        public LaptopsLogic(IRepository<Laptops> laptopRepo,IUnitOfWork unit)
         {
             Unit = unit;
+            LaptopRepo = laptopRepo;
         }
         
         public void Create(Laptops laptop)
         {
-            Unit.Repository<Laptops>().Insert(laptop);
+            LaptopRepo.Insert(laptop);
             Unit.Save();
         }
 
         public void Delete(Laptops laptop)
         {
-            Unit.Repository<Laptops>().Delete(laptop);
+            LaptopRepo.Delete(laptop);
             Unit.Save();
         }
 
         public void DeleteById(int id)
         {
-            Unit.Repository<Laptops>().Delete(id);
+            LaptopRepo.Delete(id);
             Unit.Save();
         }
 
@@ -42,22 +43,22 @@ namespace BusinessServices
             Func<IQueryable<Laptops>, IOrderedQueryable<Laptops>> orderBy = null,
             string includeProperties = "", int take = 0)
         {
-            return Unit.Repository<Laptops>().Get(filter, orderBy, includeProperties, take);
+            return LaptopRepo.Get(filter, orderBy, includeProperties, take);
         }
 
         public IEnumerable<Laptops> GetAll()
         {
-            return Unit.Repository<Laptops>().Get(null, null, String.Empty, 0);
+            return LaptopRepo.Get(null, null, String.Empty, 0);
         }
 
         public Laptops GetById(int id)
         {
-            return Unit.Repository<Laptops>().GetByID(id);
+            return LaptopRepo.GetByID(id);
         }
 
         public void Update(Laptops laptop)
         {
-            Unit.Repository<Laptops>().Update(laptop);
+            LaptopRepo.Update(laptop);
             Unit.Save();
         }
 

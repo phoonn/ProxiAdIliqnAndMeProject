@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebStore.LaptopCrudService.Laptop>
+﻿@model IEnumerable<WebStore.LaptopCrudService.Laptops>
 
 @{
     ViewBag.Title = "Index";
@@ -88,15 +88,15 @@
         @if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
         {
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btnflt4" }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btnflt4" }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btnflt4" })
+                @Html.ActionLink("Edit", "Edit", new { id = item.LaptopID }, new { @class = "btnflt4" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.LaptopID }, new { @class = "btnflt4" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.LaptopID }, new { @class = "btnflt4" })
             </td>
         }
         else
         {
             <td>
-                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btnflt4" })
+                @Html.ActionLink("Details", "Details", new { id = item.LaptopID }, new { @class = "btnflt4" })
             </td>
         }
 

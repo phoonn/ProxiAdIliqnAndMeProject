@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Interfaces;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,7 +11,7 @@ namespace Repositories
 {
     public class UsersLaptopRepository : BaseRepository<UsersLaptops>
     {
-        public UsersLaptopRepository(UnitOfWork unit) : base(unit.Context)
+        public UsersLaptopRepository(IUnitOfWork unit) : base(unit)
         {
 
         }

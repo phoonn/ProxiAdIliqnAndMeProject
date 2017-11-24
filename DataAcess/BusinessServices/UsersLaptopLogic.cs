@@ -11,29 +11,22 @@ namespace BusinessServices
 {
     public class UsersLaptopLogic : IUsersLaptopLogic<Laptops>
     {
-        UnitOfWork Unit;
-        LaptopRepository laptoprepo;
-        UsersLaptopRepository userslaptoprepo;
+        IUnitOfWork Unit;
+        IRepository<Laptops> laptoprepo;
+        IRepository<UsersLaptops> userslaptoprepo;
 
-        public UsersLaptopLogic(UnitOfWork Unit)
+        public UsersLaptopLogic(IUnitOfWork Unit, IRepository<Laptops> laptoprepo, IRepository<UsersLaptops> userslaptoprepo)
         {
             this.Unit = Unit;
-            laptoprepo = new LaptopRepository(Unit);
-            userslaptoprepo = new UsersLaptopRepository(Unit);
+            this.laptoprepo = laptoprepo;
+            this.userslaptoprepo = userslaptoprepo;
         }
 
         public IEnumerable<Laptops> GetAllUserLaptops(string userid)
         {
-            List<int> laptopids = userslaptoprepo.GetAllLaptopIds(userid).ToList();
-            //var values = new StringBuilder();
-            //values.AppendFormat("{0}", laptopids[0]);
-            //for (int i = 1; i < laptopids.Count; i++)
-            //    values.AppendFormat(", {0}", laptopids[i]);
-            //var sql = string.Format(
-            //"SELECT * FROM [dbo].[Laptops] WHERE [LaptopID] IN ({0})",
-            //values);
-
-            return laptoprepo.GetLaptopsById(laptopids);
+            List<int> laptopids = userslaptoprepo.Get(l => l.UserID == userid,null,String.Empty,0).Select(l=>l.LaptopID).ToList();
+            
+            return laptoprepo.Get(l=> laptopids.Contains(l.LaptopID),null,String.Empty,0);
         }
     }
 }

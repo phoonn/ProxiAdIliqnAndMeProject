@@ -3,12 +3,14 @@ using Interfaces;
 using Models;
 using System;
 using System.Collections.Generic;
+using System.ServiceModel;
 
 namespace WcfServiceApp
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "LaptopCrudService" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select LaptopCrudService.svc or LaptopCrudService.svc.cs at the Solution Explorer and start debugging.
-    public class LaptopCrudService : ICrudService<Laptops>
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
+    public class LaptopCrudService : ICrudService<Laptops> , IDisposable
     {
         private ICrudLogic<Laptops> LaptopLogic;
 
@@ -68,15 +70,50 @@ namespace WcfServiceApp
 
         public bool Update(Laptops laptop)
         {
-            try
-            {
+            //try
+            //{
                 LaptopLogic.Update(laptop);
                 return true;
-            }
-            catch (Exception)
+            //}
+            //catch (Exception)
+            //{
+            //    return false;
+            //}
+        }
+
+        #region IDisposable Support
+        private bool disposedValue = false; // To detect redundant calls
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
             {
-                return false;
+                if (disposing)
+                {
+                    LaptopLogic.Dispose();
+                }
+
+                // TODO: free unmanaged resources (unmanaged objects) and override a finalizer below.
+                // TODO: set large fields to null.
+
+                disposedValue = true;
             }
         }
+
+        // TODO: override a finalizer only if Dispose(bool disposing) above has code to free unmanaged resources.
+        // ~LaptopCrudService() {
+        //   // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+        //   Dispose(false);
+        // }
+
+        // This code added to correctly implement the disposable pattern.
+        void IDisposable.Dispose()
+        {
+            // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
+            Dispose(true);
+            // TODO: uncomment the following line if the finalizer is overridden above.
+            // GC.SuppressFinalize(this);
+        }
+        #endregion
     }
 }

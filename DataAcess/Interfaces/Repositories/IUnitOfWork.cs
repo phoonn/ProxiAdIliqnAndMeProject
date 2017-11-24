@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Interfaces
 {
-    public interface IEntity
+    public interface IUnitOfWork : IDisposable
     {
-        int Id { get; set; }
+        DbContext Context { get;}
+
+        void Save();
     }
 }

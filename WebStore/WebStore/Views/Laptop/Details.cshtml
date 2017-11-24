@@ -1,4 +1,4 @@
-﻿@model WebStore.LaptopCrudService.Laptop
+﻿@model WebStore.LaptopCrudService.Laptops
 
 @{
     ViewBag.Title = "Details";
@@ -94,7 +94,7 @@
 <p>
     @if (User.IsInRole("Administrator") || User.IsInRole("Moderator"))
     {
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btnflt4" })
+        @Html.ActionLink("Edit", "Edit", new { id = Model.LaptopID }, new { @class = "btnflt4" })
     }
     @Html.ActionLink("Back to List", "Index" , null, new { @class = "btnflt4" })
 </p>

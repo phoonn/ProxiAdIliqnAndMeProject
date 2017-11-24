@@ -14,23 +14,11 @@ namespace Repositories
 
         private bool disposed = false;
 
-        public DbContext Context;
-        private Dictionary<Type, object> repositories = new Dictionary<Type, object>();
+        public DbContext Context { get; private set; }
         
         public UnitOfWork(DbContext context)
         {
             Context = context;
-        }
-
-        public IRepository<T> Repository<T>() where T:class,IEntity,new()
-        {
-            if (repositories.Keys.Contains(typeof(T)) == true)
-            {
-                return repositories[typeof(T)] as IRepository<T>;
-            }
-            IRepository<T> repo = RepoContainer.container.Resolve<IRepository<T>>(new ParameterOverride("context",Context));
-            repositories.Add(typeof(T), repo);
-            return repo;
         }
 
         public void Save()
