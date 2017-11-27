@@ -233,6 +233,9 @@
     <None Include="Connected Services\LaptopCrudService\LaptopCrudService.disco" />
     <None Include="Connected Services\LaptopCrudService\configuration91.svcinfo" />
     <None Include="Connected Services\LaptopCrudService\configuration.svcinfo" />
+    <None Include="Connected Services\LaptopCrudService\LaptopCrudService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\LaptopCrudService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -282,6 +285,7 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\changeFavourites.js" />
     <Content Include="Scripts\editUser.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

@@ -26,8 +26,9 @@ namespace Models
         [StringLength(128)]
         public string UserID { get; set; }
 
+        [DataMember]
         public virtual AspNetUsers AspNetUsers { get; set; }
-
+        [DataMember]
         public virtual Laptops Laptops { get; set; }
 
         public UsersLaptops()

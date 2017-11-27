@@ -22,11 +22,12 @@
     <MetadataSource Address="http://localhost:55762/LaptopCrudService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="LaptopCrudService.wsdl" MetadataType="Wsdl" ID="6ad1296b-c04a-4078-976f-4d4694d5bf83" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?wsdl" />
-    <MetadataFile FileName="LaptopCrudService.xsd" MetadataType="Schema" ID="4e659047-df37-497a-adc1-bf64e5dc2448" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd0" />
-    <MetadataFile FileName="LaptopCrudService.disco" MetadataType="Disco" ID="36c5be99-2478-4d36-ad9b-2f7e8604690d" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?disco" />
-    <MetadataFile FileName="LaptopCrudService1.xsd" MetadataType="Schema" ID="80dd03c7-2fa0-4307-ad04-7eedc1ef4982" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd2" />
     <MetadataFile FileName="LaptopCrudService2.xsd" MetadataType="Schema" ID="39ea1428-5b00-4ae1-8f9f-15e3cc663745" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LaptopCrudService.xsd" MetadataType="Schema" ID="4e659047-df37-497a-adc1-bf64e5dc2448" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LaptopCrudService3.xsd" MetadataType="Schema" ID="81e74c55-2257-4404-8072-e3f9f9049936" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd3" />
+    <MetadataFile FileName="LaptopCrudService1.xsd" MetadataType="Schema" ID="80dd03c7-2fa0-4307-ad04-7eedc1ef4982" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LaptopCrudService.wsdl" MetadataType="Wsdl" ID="6ad1296b-c04a-4078-976f-4d4694d5bf83" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?wsdl" />
+    <MetadataFile FileName="LaptopCrudService.disco" MetadataType="Disco" ID="36c5be99-2478-4d36-ad9b-2f7e8604690d" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
