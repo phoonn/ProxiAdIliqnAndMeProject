@@ -28,7 +28,8 @@ namespace WcfServiceApp
 
         public IEnumerable<LaptopDTO> GetAllLaptopMapped()
         {
-            return LaptopLogic.GetAllMapped();
+            IEnumerable<LaptopDTO> laptopsdto = LaptopLogic.GetAllMapped();
+            return laptopsdto;
         }
 
         public Laptops GetLaptopById(int id)

@@ -38,11 +38,13 @@ namespace BusinessServices
                 if (laptop == null)
                 {
                     userslaptoprepo.Insert(new UsersLaptops(userid, laptopid));
+                    Unit.Save();
                     return true;
                 }
                 else
                 {
                     userslaptoprepo.Delete(laptop);
+                    Unit.Save();
                     return true;
                 }
             }
