@@ -1,20 +1,22 @@
 ﻿using BusinessServices;
 using Interfaces;
 using Models;
+using Models.DTO;
 using System;
 using System.Collections.Generic;
 using System.ServiceModel;
+using AutoMapper;
 
 namespace WcfServiceApp
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "LaptopCrudService" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select LaptopCrudService.svc or LaptopCrudService.svc.cs at the Solution Explorer and start debugging.
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
-    public class LaptopCrudService : ICrudService<Laptops> , IDisposable
+    public class LaptopCrudService : ICrudService<Laptops,LaptopDTO> , IDisposable
     {
-        private ICrudLogic<Laptops> LaptopLogic;
+        private ICrudLogic<Laptops,LaptopDTO> LaptopLogic;
 
-        public LaptopCrudService (ICrudLogic<Laptops> LaptopLogic)
+        public LaptopCrudService (ICrudLogic<Laptops,LaptopDTO> LaptopLogic)
         {
             this.LaptopLogic = LaptopLogic;
         }
@@ -22,6 +24,11 @@ namespace WcfServiceApp
         public IEnumerable<Laptops> GetAllLaptops()
         {
             return LaptopLogic.GetAll();
+        }
+
+        public IEnumerable<LaptopDTO> GetAllLaptopMapped()
+        {
+            return LaptopLogic.GetAllMapped();
         }
 
         public Laptops GetLaptopById(int id)
@@ -114,6 +121,8 @@ namespace WcfServiceApp
             // TODO: uncomment the following line if the finalizer is overridden above.
             // GC.SuppressFinalize(this);
         }
+
+        
         #endregion
     }
 }

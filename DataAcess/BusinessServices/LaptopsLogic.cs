@@ -4,10 +4,12 @@ using System.Linq.Expressions;
 using System;
 using System.Linq;
 using Interfaces;
+using Models.DTO;
+using AutoMapper;
 
 namespace BusinessServices
 {
-    public class LaptopsLogic : ICrudLogic<Laptops> , IDisposable
+    public class LaptopsLogic : ICrudLogic<Laptops,LaptopDTO> , IDisposable
     {
         private IUnitOfWork Unit;
         private IRepository<Laptops> LaptopRepo;
@@ -51,6 +53,13 @@ namespace BusinessServices
             return LaptopRepo.Get(null, null, String.Empty, 0);
         }
 
+
+        public IEnumerable<LaptopDTO> GetAllMapped()
+        {
+            IEnumerable<Laptops> laptops = LaptopRepo.Get(null, null, string.Empty, 0);
+            return Mapper.Map<IEnumerable<LaptopDTO>>(laptops);
+        }
+
         public Laptops GetById(int id)
         {
             return LaptopRepo.GetByID(id);
@@ -79,5 +88,6 @@ namespace BusinessServices
             Dispose(true);
             GC.SuppressFinalize(this);
         }
+
     }
 }

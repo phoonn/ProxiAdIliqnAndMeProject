@@ -15,9 +15,9 @@ namespace WebStore.Controllers
     [Route("/Laptop")]
     public class LaptopController : Controller
     {
-        private ICrudServiceOf_Laptops client;
+        private ICrudServiceOf_Laptops_LaptopDTO client;
 
-        public LaptopController(ICrudServiceOf_Laptops client)
+        public LaptopController(ICrudServiceOf_Laptops_LaptopDTO client)
         {
             this.client = client;
         }
@@ -26,8 +26,8 @@ namespace WebStore.Controllers
         [Route("Index")]
         public ActionResult Index()
         {
-            Laptops[] laptops;
-            laptops = client.GetAllLaptops();
+            LaptopDTO[] laptops;
+            laptops = client.GetAllLaptopMapped();
             ((ICommunicationObject)client).Close();
             return View(model: laptops);
         }

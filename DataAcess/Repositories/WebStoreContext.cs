@@ -20,8 +20,8 @@ namespace Repositories
             this.PCs = this.Set<PCs>();
             this.UsersLaptops = this.Set<UsersLaptops>();
             this.AspNetUsers = this.Set<AspNetUsers>();
-            //Configuration.LazyLoadingEnabled = false;
-            //Configuration.ProxyCreationEnabled = false;
+            Configuration.LazyLoadingEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

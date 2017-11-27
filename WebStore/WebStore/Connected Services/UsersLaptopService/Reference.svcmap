@@ -22,11 +22,12 @@
     <MetadataSource Address="http://localhost:55762/UsersLaptopService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UsersLaptopService.xsd" MetadataType="Schema" ID="0f6f5d5b-183b-45ea-b71b-690727561edc" SourceId="1" SourceUrl="http://localhost:55762/UsersLaptopService.svc?xsd=xsd2" />
-    <MetadataFile FileName="UsersLaptopService1.xsd" MetadataType="Schema" ID="b5fbd4e1-0fe4-495d-a110-398773969784" SourceId="1" SourceUrl="http://localhost:55762/UsersLaptopService.svc?xsd=xsd0" />
-    <MetadataFile FileName="UsersLaptopService.wsdl" MetadataType="Wsdl" ID="b29116e0-b2ea-4286-83b9-554a6952ccff" SourceId="1" SourceUrl="http://localhost:55762/UsersLaptopService.svc?wsdl" />
-    <MetadataFile FileName="UsersLaptopService.disco" MetadataType="Disco" ID="6b58af24-d883-4949-abb5-6bd9a2959ac2" SourceId="1" SourceUrl="http://localhost:55762/UsersLaptopService.svc?disco" />
     <MetadataFile FileName="UsersLaptopService2.xsd" MetadataType="Schema" ID="29fdcf33-53a7-427f-89f7-cf5f5288821b" SourceId="1" SourceUrl="http://localhost:55762/UsersLaptopService.svc?xsd=xsd1" />
+    <MetadataFile FileName="UsersLaptopService.wsdl" MetadataType="Wsdl" ID="b29116e0-b2ea-4286-83b9-554a6952ccff" SourceId="1" SourceUrl="http://localhost:55762/UsersLaptopService.svc?wsdl" />
+    <MetadataFile FileName="UsersLaptopService3.xsd" MetadataType="Schema" ID="69123748-74c3-4b25-9cbe-75bbedcd259c" SourceId="1" SourceUrl="http://localhost:55762/UsersLaptopService.svc?xsd=xsd3" />
+    <MetadataFile FileName="UsersLaptopService.xsd" MetadataType="Schema" ID="0f6f5d5b-183b-45ea-b71b-690727561edc" SourceId="1" SourceUrl="http://localhost:55762/UsersLaptopService.svc?xsd=xsd2" />
+    <MetadataFile FileName="UsersLaptopService.disco" MetadataType="Disco" ID="6b58af24-d883-4949-abb5-6bd9a2959ac2" SourceId="1" SourceUrl="http://localhost:55762/UsersLaptopService.svc?disco" />
+    <MetadataFile FileName="UsersLaptopService1.xsd" MetadataType="Schema" ID="b5fbd4e1-0fe4-495d-a110-398773969784" SourceId="1" SourceUrl="http://localhost:55762/UsersLaptopService.svc?xsd=xsd0" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -6,6 +6,8 @@ using Interfaces;
 using System.Data.Entity;
 using Repositories;
 using Interfaces.Repositories;
+using AutoMapper;
+using Models.DTO;
 
 namespace WcfServiceApp
 {
@@ -13,8 +15,8 @@ namespace WcfServiceApp
     {
         protected override void ConfigureContainer(IUnityContainer container)
         {
-            container.RegisterType<ICrudLogic<Laptops>, LaptopsLogic>();
-            container.RegisterType<ICrudService<Laptops>, LaptopCrudService>();
+            container.RegisterType<ICrudLogic<Laptops,LaptopDTO>, LaptopsLogic>();
+            container.RegisterType<ICrudService<Laptops,LaptopDTO>, LaptopCrudService>();
             container.RegisterType<DbContext, WebStoreContext>();
             container.RegisterType<IUnitOfWork, UnitOfWork>(new PerResolveLifetimeManager());
             container.RegisterType<IRepository<Laptops>,BaseRepository<Laptops>>();
@@ -22,6 +24,7 @@ namespace WcfServiceApp
             container.RegisterType<IUserLaptopRepository<UsersLaptops>,UsersLaptopRepository>();
             container.RegisterType<IUsersLaptopLogic<Laptops>, UsersLaptopLogic>();
             container.RegisterType<IUsersLaptopService<Laptops>, UsersLaptopService>();
+            
         }
     }    
 }

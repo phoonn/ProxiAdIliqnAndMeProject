@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:55762/LaptopCrudService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Models" />
+  <xs:import schemaLocation="http://localhost:55762/LaptopCrudService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Models.DTO" />
   <xs:element name="GetAllLaptops">
     <xs:complexType>
       <xs:sequence />
@@ -10,6 +11,18 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="GetAllLaptopsResult" nillable="true" type="q1:ArrayOfLaptops" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLaptopMapped">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllLaptopMappedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Models.DTO" minOccurs="0" name="GetAllLaptopMappedResult" nillable="true" type="q2:ArrayOfLaptopDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -23,14 +36,14 @@
   <xs:element name="GetLaptopByIdResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="GetLaptopByIdResult" nillable="true" type="q2:Laptops" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="GetLaptopByIdResult" nillable="true" type="q3:Laptops" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DeleteLaptop">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="entity" nillable="true" type="q3:Laptops" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="entity" nillable="true" type="q4:Laptops" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -58,7 +71,7 @@
   <xs:element name="CreateLaptop">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="entity" nillable="true" type="q4:Laptops" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="entity" nillable="true" type="q5:Laptops" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -72,7 +85,7 @@
   <xs:element name="Update">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="entity" nillable="true" type="q5:Laptops" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="entity" nillable="true" type="q6:Laptops" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

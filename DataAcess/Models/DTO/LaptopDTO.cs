@@ -1,16 +1,16 @@
-﻿using Interfaces;
-using Models.DTO;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Models
+namespace Models.DTO
 {
     [DataContract]
-    public class Laptops 
+    public class LaptopDTO
     {
-        [DataMember,Key]
+        [DataMember]
         public int LaptopID { get; set; }
         [DataMember]
         public string Brand { get; set; }
@@ -20,7 +20,7 @@ namespace Models
         public decimal Price { get; set; }
         [DataMember]
         public string OS { get; set; }
-        [Column(TypeName = "varbinary"),DataMember]
+        [ DataMember]
         public byte[] Image { get; set; }
         [DataMember]
         public int Ram { get; set; }
@@ -30,8 +30,8 @@ namespace Models
         public string HardDisk { get; set; }
         [DataMember]
         public double Screen { get; set; }
-        
-        
-        public virtual ICollection<UsersLaptops> UsersLaptops { get; set; }
+
+        [DataMember]
+        public virtual List<UsersLaptops> UsersLaptops { get; set; }
     }
 }

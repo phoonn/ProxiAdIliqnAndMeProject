@@ -22,7 +22,7 @@ namespace WebStore.App_Start
         public static void ConfigureUnityInj()
         {
             
-            Container.RegisterType<ICrudServiceOf_Laptops, CrudServiceOf_LaptopsClient>(new InjectionConstructor());
+            Container.RegisterType<ICrudServiceOf_Laptops_LaptopDTO, CrudServiceOf_Laptops_LaptopDTOClient>(new InjectionConstructor());
 
             DependencyResolver.SetResolver(new ServiceDependencyResolver(Container));
         }

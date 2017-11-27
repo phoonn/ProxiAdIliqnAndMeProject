@@ -8,11 +8,14 @@ using System.Text;
 namespace Interfaces
 // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
 {   [ServiceContract]
-    public interface ICrudService<T>  where T: class
+    public interface ICrudService<T,R>  where T: class where R:class
     {
         //Laptos
         [OperationContract]
         IEnumerable<T> GetAllLaptops();
+
+        [OperationContract]
+        IEnumerable<R> GetAllLaptopMapped();
 
         [OperationContract]
         T GetLaptopById(int id);

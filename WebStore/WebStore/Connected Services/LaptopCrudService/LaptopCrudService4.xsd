@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Models.DTO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Models.DTO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55762/LaptopCrudService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Models" />
+  <xs:complexType name="ArrayOfLaptopDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LaptopDTO" nillable="true" type="tns:LaptopDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLaptopDTO" nillable="true" type="tns:ArrayOfLaptopDTO" />
+  <xs:complexType name="LaptopDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HardDisk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="LaptopID" type="xs:int" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Processor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ram" type="xs:int" />
+      <xs:element minOccurs="0" name="Screen" type="xs:double" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="UsersLaptops" nillable="true" type="q1:ArrayOfUsersLaptops" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LaptopDTO" nillable="true" type="tns:LaptopDTO" />
+</xs:schema>

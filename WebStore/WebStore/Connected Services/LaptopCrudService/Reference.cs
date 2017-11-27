@@ -891,71 +891,282 @@ namespace WebStore.LaptopCrudService {
         }
     }
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LaptopCrudService.ICrudServiceOf_Laptops")]
-    public interface ICrudServiceOf_Laptops {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="LaptopDTO", Namespace="http://schemas.datacontract.org/2004/07/Models.DTO")]
+    [System.SerializableAttribute()]
+    public partial class LaptopDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops/GetAllLaptops", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops/GetAllLaptopsResponse")]
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string BrandField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HardDiskField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] ImageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int LaptopIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ModelField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProcessorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int RamField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ScreenField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private WebStore.LaptopCrudService.UsersLaptops[] UsersLaptopsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Brand {
+            get {
+                return this.BrandField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.BrandField, value) != true)) {
+                    this.BrandField = value;
+                    this.RaisePropertyChanged("Brand");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HardDisk {
+            get {
+                return this.HardDiskField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HardDiskField, value) != true)) {
+                    this.HardDiskField = value;
+                    this.RaisePropertyChanged("HardDisk");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] Image {
+            get {
+                return this.ImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageField, value) != true)) {
+                    this.ImageField = value;
+                    this.RaisePropertyChanged("Image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LaptopID {
+            get {
+                return this.LaptopIDField;
+            }
+            set {
+                if ((this.LaptopIDField.Equals(value) != true)) {
+                    this.LaptopIDField = value;
+                    this.RaisePropertyChanged("LaptopID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Model {
+            get {
+                return this.ModelField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ModelField, value) != true)) {
+                    this.ModelField = value;
+                    this.RaisePropertyChanged("Model");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OS {
+            get {
+                return this.OSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OSField, value) != true)) {
+                    this.OSField = value;
+                    this.RaisePropertyChanged("OS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Processor {
+            get {
+                return this.ProcessorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProcessorField, value) != true)) {
+                    this.ProcessorField = value;
+                    this.RaisePropertyChanged("Processor");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Ram {
+            get {
+                return this.RamField;
+            }
+            set {
+                if ((this.RamField.Equals(value) != true)) {
+                    this.RamField = value;
+                    this.RaisePropertyChanged("Ram");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Screen {
+            get {
+                return this.ScreenField;
+            }
+            set {
+                if ((this.ScreenField.Equals(value) != true)) {
+                    this.ScreenField = value;
+                    this.RaisePropertyChanged("Screen");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public WebStore.LaptopCrudService.UsersLaptops[] UsersLaptops {
+            get {
+                return this.UsersLaptopsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UsersLaptopsField, value) != true)) {
+                    this.UsersLaptopsField = value;
+                    this.RaisePropertyChanged("UsersLaptops");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LaptopCrudService.ICrudServiceOf_Laptops_LaptopDTO")]
+    public interface ICrudServiceOf_Laptops_LaptopDTO {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/GetAllLaptops", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/GetAllLaptopsResponse")]
         WebStore.LaptopCrudService.Laptops[] GetAllLaptops();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops/GetAllLaptops", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops/GetAllLaptopsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/GetAllLaptops", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/GetAllLaptopsResponse")]
         System.Threading.Tasks.Task<WebStore.LaptopCrudService.Laptops[]> GetAllLaptopsAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops/GetLaptopById", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops/GetLaptopByIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/GetAllLaptopMapped", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/GetAllLaptopMappedResponse")]
+        WebStore.LaptopCrudService.LaptopDTO[] GetAllLaptopMapped();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/GetAllLaptopMapped", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/GetAllLaptopMappedResponse")]
+        System.Threading.Tasks.Task<WebStore.LaptopCrudService.LaptopDTO[]> GetAllLaptopMappedAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/GetLaptopById", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/GetLaptopByIdResponse")]
         WebStore.LaptopCrudService.Laptops GetLaptopById(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops/GetLaptopById", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops/GetLaptopByIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/GetLaptopById", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/GetLaptopByIdResponse")]
         System.Threading.Tasks.Task<WebStore.LaptopCrudService.Laptops> GetLaptopByIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptop", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptopResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/DeleteLaptop", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/DeleteLaptopResponse")]
         bool DeleteLaptop(WebStore.LaptopCrudService.Laptops entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptop", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptopResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/DeleteLaptop", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/DeleteLaptopResponse")]
         System.Threading.Tasks.Task<bool> DeleteLaptopAsync(WebStore.LaptopCrudService.Laptops entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptopById", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptopByIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/DeleteLaptopById", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/DeleteLaptopByIdResponse")]
         bool DeleteLaptopById(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptopById", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops/DeleteLaptopByIdResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/DeleteLaptopById", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/DeleteLaptopByIdResponse")]
         System.Threading.Tasks.Task<bool> DeleteLaptopByIdAsync(int id);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops/CreateLaptop", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops/CreateLaptopResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/CreateLaptop", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/CreateLaptopResponse")]
         bool CreateLaptop(WebStore.LaptopCrudService.Laptops entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops/CreateLaptop", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops/CreateLaptopResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/CreateLaptop", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/CreateLaptopResponse")]
         System.Threading.Tasks.Task<bool> CreateLaptopAsync(WebStore.LaptopCrudService.Laptops entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops/Update", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops/UpdateResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/Update", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/UpdateResponse")]
         bool Update(WebStore.LaptopCrudService.Laptops entity);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops/Update", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops/UpdateResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/Update", ReplyAction="http://tempuri.org/ICrudServiceOf_Laptops_LaptopDTO/UpdateResponse")]
         System.Threading.Tasks.Task<bool> UpdateAsync(WebStore.LaptopCrudService.Laptops entity);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICrudServiceOf_LaptopsChannel : WebStore.LaptopCrudService.ICrudServiceOf_Laptops, System.ServiceModel.IClientChannel {
+    public interface ICrudServiceOf_Laptops_LaptopDTOChannel : WebStore.LaptopCrudService.ICrudServiceOf_Laptops_LaptopDTO, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CrudServiceOf_LaptopsClient : System.ServiceModel.ClientBase<WebStore.LaptopCrudService.ICrudServiceOf_Laptops>, WebStore.LaptopCrudService.ICrudServiceOf_Laptops {
+    public partial class CrudServiceOf_Laptops_LaptopDTOClient : System.ServiceModel.ClientBase<WebStore.LaptopCrudService.ICrudServiceOf_Laptops_LaptopDTO>, WebStore.LaptopCrudService.ICrudServiceOf_Laptops_LaptopDTO {
         
-        public CrudServiceOf_LaptopsClient() {
+        public CrudServiceOf_Laptops_LaptopDTOClient() {
         }
         
-        public CrudServiceOf_LaptopsClient(string endpointConfigurationName) : 
+        public CrudServiceOf_Laptops_LaptopDTOClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public CrudServiceOf_LaptopsClient(string endpointConfigurationName, string remoteAddress) : 
+        public CrudServiceOf_Laptops_LaptopDTOClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public CrudServiceOf_LaptopsClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public CrudServiceOf_Laptops_LaptopDTOClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public CrudServiceOf_LaptopsClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public CrudServiceOf_Laptops_LaptopDTOClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
@@ -965,6 +1176,14 @@ namespace WebStore.LaptopCrudService {
         
         public System.Threading.Tasks.Task<WebStore.LaptopCrudService.Laptops[]> GetAllLaptopsAsync() {
             return base.Channel.GetAllLaptopsAsync();
+        }
+        
+        public WebStore.LaptopCrudService.LaptopDTO[] GetAllLaptopMapped() {
+            return base.Channel.GetAllLaptopMapped();
+        }
+        
+        public System.Threading.Tasks.Task<WebStore.LaptopCrudService.LaptopDTO[]> GetAllLaptopMappedAsync() {
+            return base.Channel.GetAllLaptopMappedAsync();
         }
         
         public WebStore.LaptopCrudService.Laptops GetLaptopById(int id) {

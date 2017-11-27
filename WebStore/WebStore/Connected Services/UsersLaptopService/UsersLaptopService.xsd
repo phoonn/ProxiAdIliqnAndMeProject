@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55762/UsersLaptopService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Models.Identity" />
   <xs:complexType name="ArrayOfLaptops">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Laptops" nillable="true" type="tns:Laptops" />
@@ -18,7 +19,24 @@
       <xs:element minOccurs="0" name="Processor" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Ram" type="xs:int" />
       <xs:element minOccurs="0" name="Screen" type="xs:double" />
+      <xs:element minOccurs="0" name="UsersLaptops" nillable="true" type="tns:ArrayOfUsersLaptops" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Laptops" nillable="true" type="tns:Laptops" />
+  <xs:complexType name="ArrayOfUsersLaptops">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsersLaptops" nillable="true" type="tns:UsersLaptops" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsersLaptops" nillable="true" type="tns:ArrayOfUsersLaptops" />
+  <xs:complexType name="UsersLaptops">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Models.Identity" minOccurs="0" name="AspNetUsers" nillable="true" type="q1:AspNetUsers" />
+      <xs:element minOccurs="0" name="LaptopID" type="xs:int" />
+      <xs:element minOccurs="0" name="Laptops" nillable="true" type="tns:Laptops" />
+      <xs:element minOccurs="0" name="UserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserLaptopID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsersLaptops" nillable="true" type="tns:UsersLaptops" />
 </xs:schema>
