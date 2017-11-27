@@ -48,6 +48,7 @@ namespace Repositories
             modelBuilder.Entity<Laptops>()
                 .Property(e => e.Price)
                 .HasPrecision(10, 2);
+            
 
             modelBuilder.Entity<PCs>()
                 .Property(e => e.Price)

@@ -1,76 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Models.Identity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Models.Identity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:55762/LaptopCrudService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Models" />
-  <xs:complexType name="AspNetUsers">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfLaptops">
     <xs:sequence>
-      <xs:element minOccurs="0" name="AccessFailedCount" type="xs:int" />
-      <xs:element minOccurs="0" name="AspNetRoles" nillable="true" type="tns:ArrayOfAspNetRoles" />
-      <xs:element minOccurs="0" name="AspNetUserClaims" nillable="true" type="tns:ArrayOfAspNetUserClaims" />
-      <xs:element minOccurs="0" name="AspNetUserLogins" nillable="true" type="tns:ArrayOfAspNetUserLogins" />
-      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="EmailConfirmed" type="xs:boolean" />
-      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="LockoutEnabled" type="xs:boolean" />
-      <xs:element minOccurs="0" name="LockoutEndDateUtc" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="PasswordHash" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="PhoneNumberConfirmed" type="xs:boolean" />
-      <xs:element minOccurs="0" name="SecurityStamp" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="TwoFactorEnabled" type="xs:boolean" />
-      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
-      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Models" minOccurs="0" name="UsersLaptops" nillable="true" type="q1:ArrayOfUsersLaptops" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Laptops" nillable="true" type="tns:Laptops" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="AspNetUsers" nillable="true" type="tns:AspNetUsers" />
-  <xs:complexType name="ArrayOfAspNetRoles">
+  <xs:element name="ArrayOfLaptops" nillable="true" type="tns:ArrayOfLaptops" />
+  <xs:complexType name="Laptops">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="AspNetRoles" nillable="true" type="tns:AspNetRoles" />
+      <xs:element minOccurs="0" name="Brand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HardDisk" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Image" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="LaptopID" type="xs:int" />
+      <xs:element minOccurs="0" name="Model" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Processor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ram" type="xs:int" />
+      <xs:element minOccurs="0" name="Screen" type="xs:double" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfAspNetRoles" nillable="true" type="tns:ArrayOfAspNetRoles" />
-  <xs:complexType name="AspNetRoles">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AspNetUsers" nillable="true" type="tns:ArrayOfAspNetUsers" />
-      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="AspNetRoles" nillable="true" type="tns:AspNetRoles" />
-  <xs:complexType name="ArrayOfAspNetUsers">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="AspNetUsers" nillable="true" type="tns:AspNetUsers" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfAspNetUsers" nillable="true" type="tns:ArrayOfAspNetUsers" />
-  <xs:complexType name="ArrayOfAspNetUserClaims">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="AspNetUserClaims" nillable="true" type="tns:AspNetUserClaims" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfAspNetUserClaims" nillable="true" type="tns:ArrayOfAspNetUserClaims" />
-  <xs:complexType name="AspNetUserClaims">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AspNetUsers" nillable="true" type="tns:AspNetUsers" />
-      <xs:element minOccurs="0" name="ClaimType" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ClaimValue" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="AspNetUserClaims" nillable="true" type="tns:AspNetUserClaims" />
-  <xs:complexType name="ArrayOfAspNetUserLogins">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="AspNetUserLogins" nillable="true" type="tns:AspNetUserLogins" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfAspNetUserLogins" nillable="true" type="tns:ArrayOfAspNetUserLogins" />
-  <xs:complexType name="AspNetUserLogins">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AspNetUsers" nillable="true" type="tns:AspNetUsers" />
-      <xs:element minOccurs="0" name="LoginProvider" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="ProviderKey" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="UserId" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="AspNetUserLogins" nillable="true" type="tns:AspNetUserLogins" />
+  <xs:element name="Laptops" nillable="true" type="tns:Laptops" />
 </xs:schema>

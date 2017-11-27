@@ -1,13 +1,15 @@
-﻿using Interfaces;
-using Models.DTO;
+﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.Serialization;
 
 namespace Models
 {
-    [DataContract]
+    [DataContract(IsReference =true)]
     public class Laptops 
     {
         [DataMember,Key]
@@ -30,8 +32,27 @@ namespace Models
         public string HardDisk { get; set; }
         [DataMember]
         public double Screen { get; set; }
-        
-        
+
+
+        [IgnoreDataMember]
         public virtual ICollection<UsersLaptops> UsersLaptops { get; set; }
+
+        //public Laptops()
+        //{
+        //    UsersLaptops = new Collection<UsersLaptops>();
+        //}
+
+        //public IEnumerable<UsersLaptops> GetUserLaptops()
+        //{
+        //    return UsersLaptops.Skip(0);
+        //}
+
+        //public void AddUserLaptop(UsersLaptops userlaptops)
+        //{
+        //    UsersLaptops.Add(userlaptops);
+        //}
+
+        //public static Expression<Func<Laptops, ICollection<UsersLaptops>>> ChildrenAccessor = f => f.UsersLaptops;
+
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e63dd998-29c5-4791-b225-10c82398e881" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6faa4877-2998-4d7f-a219-20b05f9c74e6" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,13 +22,12 @@
     <MetadataSource Address="http://localhost:55762/LaptopCrudService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="LaptopCrudService2.xsd" MetadataType="Schema" ID="39ea1428-5b00-4ae1-8f9f-15e3cc663745" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd1" />
-    <MetadataFile FileName="LaptopCrudService.xsd" MetadataType="Schema" ID="4e659047-df37-497a-adc1-bf64e5dc2448" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd0" />
-    <MetadataFile FileName="LaptopCrudService3.xsd" MetadataType="Schema" ID="81e74c55-2257-4404-8072-e3f9f9049936" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd3" />
-    <MetadataFile FileName="LaptopCrudService1.xsd" MetadataType="Schema" ID="80dd03c7-2fa0-4307-ad04-7eedc1ef4982" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd2" />
-    <MetadataFile FileName="LaptopCrudService4.xsd" MetadataType="Schema" ID="ee4e9485-8ac2-4921-aa14-54d488f1c83a" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd4" />
-    <MetadataFile FileName="LaptopCrudService.wsdl" MetadataType="Wsdl" ID="6ad1296b-c04a-4078-976f-4d4694d5bf83" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?wsdl" />
-    <MetadataFile FileName="LaptopCrudService.disco" MetadataType="Disco" ID="36c5be99-2478-4d36-ad9b-2f7e8604690d" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?disco" />
+    <MetadataFile FileName="LaptopCrudService.xsd" MetadataType="Schema" ID="f4748735-ce43-42d4-939f-b4f8bb6bc34b" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LaptopCrudService1.xsd" MetadataType="Schema" ID="d73505e0-bf87-4682-875c-42cf931cf54e" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LaptopCrudService2.xsd" MetadataType="Schema" ID="0c8fcd33-dd98-48a5-b652-c726b6a2cce1" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd3" />
+    <MetadataFile FileName="LaptopCrudService3.xsd" MetadataType="Schema" ID="5acffd3e-d372-4dc5-b305-76316d27137e" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LaptopCrudService.wsdl" MetadataType="Wsdl" ID="d16efcb3-ee86-45e2-a2d4-80a4936bff19" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?wsdl" />
+    <MetadataFile FileName="LaptopCrudService.disco" MetadataType="Disco" ID="b9f49e77-4032-4c3f-a057-06348af30eed" SourceId="1" SourceUrl="http://localhost:55762/LaptopCrudService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

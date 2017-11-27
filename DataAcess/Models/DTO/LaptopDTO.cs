@@ -32,6 +32,6 @@ namespace Models.DTO
         public double Screen { get; set; }
 
         [DataMember]
-        public virtual List<UsersLaptops> UsersLaptops { get; set; }
+        public virtual List<UsersLaptopsDTO> UsersLaptops {get; set; }
     }
 }

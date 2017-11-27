@@ -12,7 +12,7 @@ using System.Runtime.Serialization;
 
 namespace Models
 {
-    [DataContract]
+    [DataContract(IsReference =true)]
     public class UsersLaptops 
     {
         [DataMember,Key]
@@ -26,9 +26,10 @@ namespace Models
         [StringLength(128)]
         public string UserID { get; set; }
 
-        [DataMember]
+        [IgnoreDataMember]
         public virtual AspNetUsers AspNetUsers { get; set; }
-        [DataMember]
+        
+        [IgnoreDataMember]
         public virtual Laptops Laptops { get; set; }
 
         public UsersLaptops()

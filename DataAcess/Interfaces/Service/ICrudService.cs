@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Interfaces.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,12 +13,14 @@ namespace Interfaces
     {
         //Laptos
         [OperationContract]
+        [ApplyDataContractResolver]
         IEnumerable<T> GetAllLaptops();
 
         [OperationContract]
         IEnumerable<R> GetAllLaptopMapped();
 
         [OperationContract]
+        [ApplyDataContractResolver]
         T GetLaptopById(int id);
 
         [OperationContract]

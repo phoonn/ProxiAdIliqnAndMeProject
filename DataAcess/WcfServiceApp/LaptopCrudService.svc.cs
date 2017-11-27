@@ -23,7 +23,8 @@ namespace WcfServiceApp
 
         public IEnumerable<Laptops> GetAllLaptops()
         {
-            return LaptopLogic.GetAll();
+            IEnumerable<Laptops> laptops = LaptopLogic.GetAll();
+            return laptops;
         }
 
         public IEnumerable<LaptopDTO> GetAllLaptopMapped()
@@ -34,7 +35,8 @@ namespace WcfServiceApp
 
         public Laptops GetLaptopById(int id)
         {
-            return LaptopLogic.GetById(id);
+            Laptops laptop = LaptopLogic.GetById(id);
+            return laptop;
         }
 
         public bool DeleteLaptop(Laptops laptop)

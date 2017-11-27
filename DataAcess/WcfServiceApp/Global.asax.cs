@@ -15,7 +15,12 @@ namespace WcfServiceApp
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            Mapper.Initialize(cfg => cfg.CreateMap<Laptops, LaptopDTO>());
+            Mapper.Initialize(cfg =>
+            {
+                cfg.ShouldMapProperty = p => p.GetMethod.IsPublic || p.GetMethod.IsAssembly;
+                cfg.CreateMap<Laptops, LaptopDTO>();
+                cfg.CreateMap<UsersLaptops, UsersLaptopsDTO>();
+            });
         }
 
         protected void Session_Start(object sender, EventArgs e)
