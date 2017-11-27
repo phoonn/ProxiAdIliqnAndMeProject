@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Web;
 using System.Web.Mvc;
 using WebStore.UsersLaptopService;
@@ -15,6 +16,7 @@ namespace WebStore.Controllers
         public ActionResult Index()
         {
             IEnumerable<Laptops> laptops = client.GetAllUserLaptops(User.Identity.GetUserId());
+            client.Close();
             return View(laptops);
         }
 

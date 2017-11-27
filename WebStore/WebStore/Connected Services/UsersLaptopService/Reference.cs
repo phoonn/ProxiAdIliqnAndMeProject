@@ -29,10 +29,10 @@ namespace WebStore.UsersLaptopService {
         private string HardDiskField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int IdField;
+        private byte[] ImageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private byte[] ImageField;
+        private int LaptopIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ModelField;
@@ -89,19 +89,6 @@ namespace WebStore.UsersLaptopService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Id {
-            get {
-                return this.IdField;
-            }
-            set {
-                if ((this.IdField.Equals(value) != true)) {
-                    this.IdField = value;
-                    this.RaisePropertyChanged("Id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public byte[] Image {
             get {
                 return this.ImageField;
@@ -110,6 +97,19 @@ namespace WebStore.UsersLaptopService {
                 if ((object.ReferenceEquals(this.ImageField, value) != true)) {
                     this.ImageField = value;
                     this.RaisePropertyChanged("Image");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int LaptopID {
+            get {
+                return this.LaptopIDField;
+            }
+            set {
+                if ((this.LaptopIDField.Equals(value) != true)) {
+                    this.LaptopIDField = value;
+                    this.RaisePropertyChanged("LaptopID");
                 }
             }
         }
@@ -211,6 +211,12 @@ namespace WebStore.UsersLaptopService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersLaptopServiceOf_Laptops/GetAllUserLaptops", ReplyAction="http://tempuri.org/IUsersLaptopServiceOf_Laptops/GetAllUserLaptopsResponse")]
         System.Threading.Tasks.Task<WebStore.UsersLaptopService.Laptops[]> GetAllUserLaptopsAsync(string userid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersLaptopServiceOf_Laptops/SetLaptop", ReplyAction="http://tempuri.org/IUsersLaptopServiceOf_Laptops/SetLaptopResponse")]
+        bool SetLaptop(string userid, int laptopid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUsersLaptopServiceOf_Laptops/SetLaptop", ReplyAction="http://tempuri.org/IUsersLaptopServiceOf_Laptops/SetLaptopResponse")]
+        System.Threading.Tasks.Task<bool> SetLaptopAsync(string userid, int laptopid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -246,6 +252,14 @@ namespace WebStore.UsersLaptopService {
         
         public System.Threading.Tasks.Task<WebStore.UsersLaptopService.Laptops[]> GetAllUserLaptopsAsync(string userid) {
             return base.Channel.GetAllUserLaptopsAsync(userid);
+        }
+        
+        public bool SetLaptop(string userid, int laptopid) {
+            return base.Channel.SetLaptop(userid, laptopid);
+        }
+        
+        public System.Threading.Tasks.Task<bool> SetLaptopAsync(string userid, int laptopid) {
+            return base.Channel.SetLaptopAsync(userid, laptopid);
         }
     }
 }

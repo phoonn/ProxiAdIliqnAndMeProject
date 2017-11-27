@@ -25,5 +25,11 @@ namespace WcfServiceApp
         {
             return logic.GetAllUserLaptops(userid);
         }
+
+        public bool SetLaptop(string userid, int laptopid)
+        {
+            return logic.SetLaptop(userid, laptopid);
+           
+        }
     }
 }

@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\ICrudLogic.cs" />
+    <Compile Include="Repositories\IUserLaptopRepository.cs" />
     <Compile Include="Service\ICrudService.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\IUnitOfWork.cs" />

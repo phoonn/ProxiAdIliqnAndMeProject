@@ -12,5 +12,8 @@ namespace Interfaces
     {
         [OperationContract]
         IEnumerable<T> GetAllUserLaptops(string userid);
+
+        [OperationContract]
+        bool SetLaptop(string userid, int laptopid);
     }
 }

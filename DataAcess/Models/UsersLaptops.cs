@@ -29,5 +29,16 @@ namespace Models
         public virtual AspNetUsers AspNetUsers { get; set; }
 
         public virtual Laptops Laptops { get; set; }
+
+        public UsersLaptops()
+        {
+
+        }
+
+        public UsersLaptops(string userid, int laptopid)
+        {
+            LaptopID = laptopid;
+            UserID = userid;
+        }
     }
 }

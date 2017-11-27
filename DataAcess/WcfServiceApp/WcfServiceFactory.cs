@@ -5,6 +5,7 @@ using BusinessServices;
 using Interfaces;
 using System.Data.Entity;
 using Repositories;
+using Interfaces.Repositories;
 
 namespace WcfServiceApp
 {
@@ -18,7 +19,7 @@ namespace WcfServiceApp
             container.RegisterType<IUnitOfWork, UnitOfWork>(new PerResolveLifetimeManager());
             container.RegisterType<IRepository<Laptops>,BaseRepository<Laptops>>();
             //second service
-            container.RegisterType<IRepository<UsersLaptops>,BaseRepository<UsersLaptops>>();
+            container.RegisterType<IUserLaptopRepository<UsersLaptops>,UsersLaptopRepository>();
             container.RegisterType<IUsersLaptopLogic<Laptops>, UsersLaptopLogic>();
             container.RegisterType<IUsersLaptopService<Laptops>, UsersLaptopService>();
         }

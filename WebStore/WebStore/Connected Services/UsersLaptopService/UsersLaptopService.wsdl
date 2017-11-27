@@ -13,16 +13,35 @@
   <wsdl:message name="IUsersLaptopServiceOf_Laptops_GetAllUserLaptops_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllUserLaptopsResponse" />
   </wsdl:message>
+  <wsdl:message name="IUsersLaptopServiceOf_Laptops_SetLaptop_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetLaptop" />
+  </wsdl:message>
+  <wsdl:message name="IUsersLaptopServiceOf_Laptops_SetLaptop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetLaptopResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUsersLaptopServiceOf_Laptops">
     <wsdl:operation name="GetAllUserLaptops">
       <wsdl:input wsaw:Action="http://tempuri.org/IUsersLaptopServiceOf_Laptops/GetAllUserLaptops" message="tns:IUsersLaptopServiceOf_Laptops_GetAllUserLaptops_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUsersLaptopServiceOf_Laptops/GetAllUserLaptopsResponse" message="tns:IUsersLaptopServiceOf_Laptops_GetAllUserLaptops_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetLaptop">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUsersLaptopServiceOf_Laptops/SetLaptop" message="tns:IUsersLaptopServiceOf_Laptops_SetLaptop_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUsersLaptopServiceOf_Laptops/SetLaptopResponse" message="tns:IUsersLaptopServiceOf_Laptops_SetLaptop_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUsersLaptopServiceOf_Laptops" type="tns:IUsersLaptopServiceOf_Laptops">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllUserLaptops">
       <soap:operation soapAction="http://tempuri.org/IUsersLaptopServiceOf_Laptops/GetAllUserLaptops" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetLaptop">
+      <soap:operation soapAction="http://tempuri.org/IUsersLaptopServiceOf_Laptops/SetLaptop" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
