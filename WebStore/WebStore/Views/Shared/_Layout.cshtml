@@ -22,7 +22,11 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Laptops", "Index", "Laptop")</li>
-                    @if(User.IsInRole("Administrator"))
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Favourites", "Index", "FavouriteLaptops")</li>
+                    }
+                    @if (User.IsInRole("Administrator"))
                     {
                         <li>@Html.ActionLink("Users", "Index", "User")</li>
                     }
@@ -45,7 +49,7 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        
+
         <footer style="position:fixed; bottom:0;">
             <hr />
             <p>&copy; 2017 - IStoyanov22 & Phoonn </p>

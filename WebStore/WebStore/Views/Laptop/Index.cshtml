@@ -108,16 +108,16 @@
             }
             else
             {
-                if (item.UsersLaptops.Select(x => x.LaptopID).Contains(item.LaptopID))
+                if (item.UsersLaptops.Select(x=>x.LaptopID).Contains(item.LaptopID))
                 {
                     <td>
-                        <button type="button" id="changeFav" class="btnflt4" value="@item.LaptopID">Remove from favourites</button>
+                        <button type="button" class="changeFav btnflt4" value="@item.LaptopID">Remove from favourites</button>
                     </td>
                 }
                 else
                 {
                     <td>
-                        <button type="button" id="changeFav" class="btnflt4" value="@item.LaptopID">Add to favourites</button>
+                        <button type="button" class="changeFav btnflt4" value="@item.LaptopID">Add to favourites</button>
                     </td>
                 }
             }
