@@ -44,9 +44,10 @@
         </th>
         <th></th>
     </tr>
-
+    @{int id = 0; }
     @foreach (var item in Model)
     {
+        id++;
         <tr>
             <td>
                 @{
@@ -111,13 +112,13 @@
                 if (item.UsersLaptops.Select(x=>x.LaptopID).Contains(item.LaptopID))
                 {
                     <td>
-                        <button type="button" class="changeFav btnflt4" value="@item.LaptopID">Remove from favourites</button>
+                        <button type="button" id="@id" class="changeFav btnflt4" value="@item.LaptopID">Remove from favourites</button>
                     </td>
                 }
                 else
                 {
                     <td>
-                        <button type="button" class="changeFav btnflt4" value="@item.LaptopID">Add to favourites</button>
+                        <button type="button" id="@id" class="changeFav btnflt4" value="@item.LaptopID">Add to favourites</button>
                     </td>
                 }
             }

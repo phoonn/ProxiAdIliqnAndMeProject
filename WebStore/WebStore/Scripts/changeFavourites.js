@@ -2,6 +2,7 @@
     var laptopID = $(this).attr("value");
     var btnText = this.innerHTML;
     var btn = this;
+    var id = this.id;
     $.ajax({
         type: "post",
         url: '/FavouriteLaptops/ChangeFavourites',
@@ -10,14 +11,15 @@
         },
         ajaxasync: true,
         success: function (data) {
-            //if (btnText == "Add to favourites") {
-            //    btn.html("Remove from favourites");
-            //}
-            //else {
-            //    btn.html("Add to favourites");
+            if (btnText === "Add to favourites") {
+                $("#" + id).html("Remove from favourites");
+            }
+            else {
+                $("#" + id).html("Add to favourites");
 
-            //}
-            location.reload(); 
+            }
+            
+            //location.reload(); 
 
         },
         error: function () {
